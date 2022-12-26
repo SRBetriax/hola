@@ -1,0 +1,16 @@
+@import "_header.scss";
+@import "_ctasection.scss";
+@import "_description1.scss";
+@import "_description2.scss";
+@import "_description3.scss";
+@import "_description4.scss";
+@import "_FAQ.scss";
+@import "_helpers.scss";
+@import "_finalCta.scss";
+@import "_footer.scss";
+* {
+  font-family: "Poppins", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}

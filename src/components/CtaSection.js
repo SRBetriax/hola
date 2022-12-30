@@ -1,68 +1,73 @@
+import axios from "axios";
+// eslint-disable-next-line
 import React, { useEffect, useState, useCallback, useRef } from "react";
+import { Link } from "react-router-dom";
 import enviado from "../img/check.png";
 const CtaSection = () => {
   const [compraVenta, setCompraVenta] = useState([0, 0]);
   const [cardSegment, setCardSegment] = useState("comprar");
+  // eslint-disable-next-line
   const [oferta, setOferta] = useState(0);
+  // eslint-disable-next-line
   const [venta, setVenta] = useState(0);
+  // eslint-disable-next-line
   const [vigencia, setVigencia] = useState(0);
+  // eslint-disable-next-line
   const [email, setEmail] = useState("");
+  // eslint-disable-next-line
   const [done, setDone] = useState(false);
   const [height, setHeight] = useState("auto");
   const formRef = useRef();
 
   useEffect(() => {
     setHeight(formRef.current.getBoundingClientRect().height);
-    fetch("http://localhost:3001/currencies")
-      .then((response) => {
-        console.log(response)
-        return response.json();
-      })
+    axios("https://apilayer.net/api/live?access_key=5d2e6f9b9ddb2e9e666c855856501ec6&currencies=mxn,pen,clp,cop&source=USD&format=1")
       .then((res) => {
-        setCompraVenta([res.usdpen, 1 / res.usdpen]);
+        console.log("0",res)
+        setCompraVenta([res.data.quotes.USDPEN, 1 / res.data.quotes.USDPEN]);
       })
       .catch((err) => {
         console.log("No se pudo recuperar la tasa", err);
       });
   }, []);
-  const enviarForm = useCallback(() => {
-    if(email && oferta && venta && vigencia) {
-      let data = JSON.stringify({
-        to: email,
-        type: cardSegment,
-        offering: oferta,
-        asking: venta,
-        time: vigencia,
-      });
-      fetch("https://currency.betriax.com/sendEmail", {
-        method: "post",
-        body: data,
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-        .then((e) => {
-          setEmail("");
-          setOferta(0);
-          setVenta(0);
-          setVigencia(0);
-          setDone(true);
-          //console.log(e);
-          formRef.current.reset();
-          let url;
-          let callback = function () {
-            if (typeof(url) != 'undefined') {
-                window.location = url;
-            }
-          };
-          window.dataLayer.push({'event': 'conversion',
-              'send_to': 'AW-10813077027/mADECLyf7ZUBEICqjusC',
-              'event_callback': callback
-          });
-        })
-        .catch(console.error);
-    }
-  }, [cardSegment, email, oferta, venta, vigencia]);
+  // const enviarForm = useCallback(() => {
+  //   if(email && oferta && venta && vigencia) {
+  //     let data = JSON.stringify({
+  //       to: email,
+  //       type: cardSegment,
+  //       offering: oferta,
+  //       asking: venta,
+  //       time: vigencia,
+  //     });
+  //     fetch("https://currency.betriax.com/sendEmail", {
+  //       method: "post",
+  //       body: data,
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     })
+  //       .then((e) => {
+  //         setEmail("");
+  //         setOferta(0);
+  //         setVenta(0);
+  //         setVigencia(0);
+  //         setDone(true);
+  //         //console.log(e);
+  //         formRef.current.reset();
+  //         let url;
+  //         let callback = function () {
+  //           if (typeof(url) != 'undefined') {
+  //               window.location = url;
+  //           }
+  //         };
+  //         window.dataLayer.push({'event': 'conversion',
+  //             'send_to': 'AW-10813077027/mADECLyf7ZUBEICqjusC',
+  //             'event_callback': callback
+  //         });
+  //       })
+  //       .catch(console.error);
+  //   }
+  // }, [cardSegment, email, oferta, venta, vigencia]);
 
   return (
     <main className="container-fluid cta-container">
@@ -96,12 +101,12 @@ const CtaSection = () => {
             segura del mercado de cambio de divisas. <br />
             Tú pones el precio a tus dólares.
           </h3>
-          <a href="https://app.betriax.com/register">
-            <button className="cta-button">Entra ahora, es gratis</button>
-          </a>
-          <a href="https://app.betriax.com/">
-            <span className="cta-enter">O ingresa ahora</span>
-          </a>
+            <Link to={'/maintence'}>
+              <button className="cta-button">Entra ahora, es gratis</button>
+            </Link>
+            <Link to={'/maintence'}>
+              <span className="cta-enter">O ingresa ahora</span>
+            </Link>
         </div>
         <div className="col-md-6 col-sm-12 cta-card-column">
           <div className="cta-card">
@@ -186,7 +191,7 @@ const CtaSection = () => {
                 <button
                   onClick={(e) => {
                     e.preventDefault();
-                    enviarForm();
+                    // enviarForm();
                   }}
                   className="cta-send"
                 >

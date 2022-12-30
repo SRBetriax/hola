@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function FinalCta() {
   return (
@@ -481,9 +482,12 @@ export default function FinalCta() {
 
         <div className="col-12">
           <h2>Compra o vende tus dólares ahora.</h2>
-          <a href="https://app.betriax.com/register">
+          {/* <a href="https://app.betriax.com/register">
             <button className="cta-button">Regístrate gratis</button>
-          </a>
+          </a> */}
+          <Link to="/maintence">
+            <button className="cta-button">Regístrate gratis</button>
+          </Link>
         </div>
       </div>
     </article>

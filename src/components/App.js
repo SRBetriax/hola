@@ -2,8 +2,9 @@ import React, {useEffect} from 'react';
 import Header from './Header';
 import Content from './Content';
 import AOS from 'aos';
-
-
+//link a pagina de mantenimiento
+import { Route, Routes } from 'react-router-dom'
+import Maintence from './Maintence';
 
 function App() {
   useEffect(()=>{
@@ -12,8 +13,11 @@ function App() {
   },[])
   return (
     <>
-      <Header />
-      <Content/>
+      <Header/>
+      <Routes>
+        <Route exact path="/" element={<Content/>}/>
+        <Route path="/maintence/" element={<Maintence/>}/>
+      </Routes>
     </>
   );
 }

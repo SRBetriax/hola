@@ -1,5 +1,5 @@
 import React, { useState, useRef, useCallback, useEffect } from "react";
-import menu from "../img/btn-menu.png";
+import menu from "../../assets/img/btn-menu.png";
 import { useIntersection } from "react-use";
 function Header() {
   const [menuVisible, setmenuVisible] = useState(false);
@@ -96,7 +96,10 @@ function Header() {
             </div>
           )}
           <ul
-            className={"col-lg-8 col-6 d-flex justify-content-between mobile" + (menuVisible? " active" : "")}
+            className={
+              "col-lg-8 col-6 d-flex justify-content-between mobile" +
+              (menuVisible ? " active" : "")
+            }
           >
             <li className="header-link-box ">
               <a href="#producto">Producto</a>
@@ -108,14 +111,10 @@ function Header() {
               <a href="#preguntas-frecuentes">Preguntas frecuentes</a>
             </li>
             <li className="header-link-box cta personas">
-              <a href="https://app.betriax.com/register">
-                Personas
-              </a>
+              <a href="https://app.betriax.com/register">Personas</a>
             </li>
             <li className="header-link-box cta">
-              <a href="https://app.betriax.com/register">
-                Empresas
-              </a>
+              <a href="https://app.betriax.com/register">Empresas</a>
             </li>
           </ul>
         </nav>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback, useRef } from "react";
-import enviado from "../img/check.png";
+import enviado from "../../assets/img/check.png";
 const CtaSection = () => {
   const [compraVenta, setCompraVenta] = useState([0, 0]);
   const [cardSegment, setCardSegment] = useState("comprar");
@@ -15,7 +15,7 @@ const CtaSection = () => {
     setHeight(formRef.current.getBoundingClientRect().height);
     fetch("http://localhost:3001/currencies")
       .then((response) => {
-        console.log(response)
+        console.log(response);
         return response.json();
       })
       .then((res) => {
@@ -26,7 +26,7 @@ const CtaSection = () => {
       });
   }, []);
   const enviarForm = useCallback(() => {
-    if(email && oferta && venta && vigencia) {
+    if (email && oferta && venta && vigencia) {
       let data = JSON.stringify({
         to: email,
         type: cardSegment,
@@ -51,13 +51,14 @@ const CtaSection = () => {
           formRef.current.reset();
           let url;
           let callback = function () {
-            if (typeof(url) != 'undefined') {
-                window.location = url;
+            if (typeof url != "undefined") {
+              window.location = url;
             }
           };
-          window.dataLayer.push({'event': 'conversion',
-              'send_to': 'AW-10813077027/mADECLyf7ZUBEICqjusC',
-              'event_callback': callback
+          window.dataLayer.push({
+            event: "conversion",
+            send_to: "AW-10813077027/mADECLyf7ZUBEICqjusC",
+            event_callback: callback,
           });
         })
         .catch(console.error);
@@ -89,7 +90,7 @@ const CtaSection = () => {
       <div className="row">
         <div className="col-md-6 col-sm-12 cta-text-column">
           <h1 className="cta-title">
-          Ponle el precio a tus dólares <br /> ¿Qué esperas?
+            Ponle el precio a tus dólares <br /> ¿Qué esperas?
           </h1>
           <h3 className="cta-subtitle">
             Somos una innovación financiera, transparente y <br />
@@ -130,7 +131,10 @@ const CtaSection = () => {
               </button>
             </div>
             <div className="cta-card-body-form">
-              <form className={"cta-card-form-compra " + (done? "d-none" : "")} ref={formRef}>
+              <form
+                className={"cta-card-form-compra " + (done ? "d-none" : "")}
+                ref={formRef}
+              >
                 <h6>Cantidad a {cardSegment}</h6>
                 <div className="cta-value-input">
                   <label htmlFor="">USD</label>
@@ -193,12 +197,16 @@ const CtaSection = () => {
                   Publica tu oferta
                 </button>
               </form>
-              <div className={"cta-card-confirmation " + (done? "" : "d-none")} style={{height: height}}>
-                <img src={enviado} alt="Confirmación envío información"/>
+              <div
+                className={"cta-card-confirmation " + (done ? "" : "d-none")}
+                style={{ height: height }}
+              >
+                <img src={enviado} alt="Confirmación envío información" />
                 <p>
                   <span className="conf">¡Gracias!</span>
-                  <br/>
-                  Revisa tu correo electrónico para iniciar tu proceso en Betriax.
+                  <br />
+                  Revisa tu correo electrónico para iniciar tu proceso en
+                  Betriax.
                 </p>
               </div>
             </div>

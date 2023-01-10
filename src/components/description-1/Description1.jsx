@@ -1,5 +1,5 @@
 import React from "react";
-import plataforma from "../img/Plataforma1.png";
+import plataforma from "../../assets/img/Plataforma1.png";
 export default function Description1() {
   return (
     <article className="container-fluid desc-1" id="producto">

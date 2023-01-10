@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
-import Header from './Header';
-import Content from './Content';
+import Header from './components/Header';
+import Content from './pages/Content';
 import AOS from 'aos';
 
 

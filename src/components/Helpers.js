@@ -14,7 +14,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css';
 //import "swiper/swiper.scss";
 
-export default function Helpers() {
+const Helpers = () => {
   const gallerySwiperRef = useRef(null);
   const params = {
     slidesPerView: window.innerWidth > 800 ? 4.5 : 1.8,
@@ -116,3 +116,5 @@ export default function Helpers() {
     </article>
   );
 }
+
+export default Helpers

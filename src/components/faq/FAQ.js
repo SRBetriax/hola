@@ -1,31 +1,34 @@
 import { useState, useCallback } from "react";
-import ArrowFAQ from "../icons/Landing/ArrowFAQ";
+import ArrowFAQ from "../../icons/Landing/ArrowFAQ";
 
 const FAQ = () => {
   const [question, setQuestion] = useState("");
-  const seccionPressed = useCallback((str) => {
-    switch (str) {
-      case "cuanto":
-        question === "cuanto" ? setQuestion("") : setQuestion("cuanto");
-        break;
-      case "que":
-        question === "que" ? setQuestion("") : setQuestion("que");
-        break;
-      case "casa":
-        question === "casa" ? setQuestion("") : setQuestion("casa");
-        break;
-      case "protege":
-        question === "protege" ? setQuestion("") : setQuestion("protege");
-        break;
-      case "funciona":
-        question === "funciona" ? setQuestion("") : setQuestion("funciona");
-        break;
+  const seccionPressed = useCallback(
+    (str) => {
+      switch (str) {
+        case "cuanto":
+          question === "cuanto" ? setQuestion("") : setQuestion("cuanto");
+          break;
+        case "que":
+          question === "que" ? setQuestion("") : setQuestion("que");
+          break;
+        case "casa":
+          question === "casa" ? setQuestion("") : setQuestion("casa");
+          break;
+        case "protege":
+          question === "protege" ? setQuestion("") : setQuestion("protege");
+          break;
+        case "funciona":
+          question === "funciona" ? setQuestion("") : setQuestion("funciona");
+          break;
 
-      default:
-        setQuestion("");
-        break;
-    }
-  }, [question]);
+        default:
+          setQuestion("");
+          break;
+      }
+    },
+    [question]
+  );
   return (
     <article className="container-fluid faq" id="preguntas-frecuentes">
       <div className="row">
@@ -43,7 +46,7 @@ const FAQ = () => {
               }}
             >
               <h3>¿Cuánto cobra Betriax?</h3>
-              <ArrowFAQ/>
+              <ArrowFAQ />
             </div>
             <div
               className={
@@ -67,7 +70,7 @@ const FAQ = () => {
               }}
             >
               <h3>¿Betriax es una casa de cambio digital?</h3>
-              <ArrowFAQ/>
+              <ArrowFAQ />
             </div>
             <div
               className={
@@ -99,7 +102,7 @@ const FAQ = () => {
               }}
             >
               <h3>¿Cómo protege Betriax mi dinero?</h3>
-              <ArrowFAQ/>
+              <ArrowFAQ />
             </div>
             <div
               className={
@@ -133,7 +136,7 @@ const FAQ = () => {
               }}
             >
               <h3>¿Cómo funciona Betriax?</h3>
-              <ArrowFAQ/>
+              <ArrowFAQ />
             </div>
             <div
               className={
@@ -161,7 +164,7 @@ const FAQ = () => {
               }}
             >
               <h3>¿Qué es Betriax?</h3>
-              <ArrowFAQ/>
+              <ArrowFAQ />
             </div>
             <div
               className={
@@ -186,6 +189,6 @@ const FAQ = () => {
       </div>
     </article>
   );
-}
+};
 
-export default FAQ
+export default FAQ;

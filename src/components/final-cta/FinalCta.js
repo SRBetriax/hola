@@ -1,13 +1,13 @@
-import Group1 from "../icons/Landing/Group1";
-import Group2 from "../icons/Landing/Group2";
+import Group1 from "../../icons/Landing/Group1";
+import Group2 from "../../icons/Landing/Group2";
 
 const FinalCta = () => {
   return (
     <article className="container-fluid final-cta">
       <div className="row">
-      <Group1/>
+        <Group1 />
 
-      <Group2/>
+        <Group2 />
 
         <div className="col-12">
           <h2>Compra o vende tus dólares ahora.</h2>
@@ -18,6 +18,6 @@ const FinalCta = () => {
       </div>
     </article>
   );
-}
+};
 
-export default FinalCta
+export default FinalCta;

@@ -1,8 +1,7 @@
-import Register from "../icons/Landing/Register";
-import Create from "../icons/Landing/Create";
-import Match from "../icons/Landing/Match";
-import SendOrRecibe from "../icons/Landing/SendOrRecibe";
-
+import Register from "../../icons/Landing/Register";
+import Create from "../../icons/Landing/Create";
+import Match from "../../icons/Landing/Match";
+import SendOrRecibe from "../../icons/Landing/SendOrRecibe";
 
 const Description2 = () => {
   return (
@@ -48,6 +47,6 @@ const Description2 = () => {
       </div>
     </article>
   );
-}
+};
 
 export default Description2;

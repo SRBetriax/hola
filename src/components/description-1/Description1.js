@@ -1,5 +1,5 @@
 import React from "react";
-import plataforma from "../img/Plataforma1.png";
+import plataforma from "../../assets/img/Plataforma1.png";
 
 const Description1 = () => {
   return (
@@ -34,6 +34,6 @@ const Description1 = () => {
       </div>
     </article>
   );
-}
+};
 
 export default Description1;

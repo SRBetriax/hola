@@ -1,8 +1,8 @@
-import Equity from "../icons/Landing/Equity";
-import ExchangeRate from "../icons/Landing/ExchangeRate";
-import Security from "../icons/Landing/Security";
+import Equity from "../../icons/Landing/Equity";
+import ExchangeRate from "../../icons/Landing/ExchangeRate";
+import Security from "../../icons/Landing/Security";
 
-const Description3 =() => {
+const Description3 = () => {
   return (
     <article className="container-fluid desc-3" id="porque-betriax">
       <div className="row desc-3-title">
@@ -21,12 +21,12 @@ const Description3 =() => {
           </p>
         </div>
         <div className="col-lg-4 col-12 desc-3-content-icon">
-        <ExchangeRate/>
+          <ExchangeRate />
         </div>
       </div>
       <div className="row desc-3-content">
         <div className="col-lg-4 col-12 desc-3-content-icon">
-        <Security/>
+          <Security />
         </div>
         <div className="col-lg-8 col-12 desc-3-content-text">
           <h3>Seguridad siempre</h3>
@@ -50,11 +50,11 @@ const Description3 =() => {
           </p>
         </div>
         <div className="col-lg-4 col-12 desc-3-content-icon">
-        <Equity/>
+          <Equity />
         </div>
       </div>
     </article>
   );
-}
+};
 
-export default Description3
+export default Description3;

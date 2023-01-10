@@ -1,8 +1,6 @@
 import React, { useEffect, useState, useCallback, useRef } from "react";
-import enviado from "../img/check.png";
-import LogoXL from "../icons/Landing/LogoXL";
-
-
+import enviado from "../../assets/img/check.png";
+import LogoXL from "../../icons/Landing/LogoXL";
 
 const CtaSection = () => {
   const [compraVenta, setCompraVenta] = useState([0, 0]);

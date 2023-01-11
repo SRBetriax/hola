@@ -14,9 +14,9 @@ import Header from "../components/header/Header";
 
 const Landing = () => {
   const currencyValue = getCurrency();
+
   useEffect(() => {
     if (!currencyValue) fetchData();
-
     const timer = setInterval(() => fetchData(), 1000 * 60 * 60 * 24);
     return () => clearInterval(timer);
     // eslint-disable-next-line

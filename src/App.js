@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Header from "./components/header/Header";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Landing from "./pages/Landing";
 import AOS from "aos";
 
@@ -9,10 +9,11 @@ function App() {
     AOS.refresh();
   }, []);
   return (
-    <>
-      <Header />
-      <Landing />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

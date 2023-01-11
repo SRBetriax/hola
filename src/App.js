@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Header from "./components/header/Header";
-import Content from "./pages/Content";
+import Landing from "./pages/Landing";
 import AOS from "aos";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Header />
-      <Content />
+      <Landing />
     </>
   );
 }

@@ -18,8 +18,7 @@ const Landing = () => {
   const dispatch = useDispatch();
   const currencyValue = getCurrency();
   useEffect(() => {
-    // if(!currencyValue) dispatch(fetchCurrency());
-    dispatch(fetchCurrency());
+    if(!currencyValue) dispatch(fetchCurrency());
     
     const timer = setInterval(() => fetchCurrency(), 1000 * 60 * 60 * 72);
     return () => clearInterval(timer);

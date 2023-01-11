@@ -9,11 +9,15 @@ import FAQ from "../components/faq/FAQ";
 import Helpers from "../components/helpers/Helpers";
 import FinalCta from "../components/final-cta/FinalCta";
 import Footer from "../components/footer/Footer";
-import { fetchData } from "../utils";
+import { fetchData, getCurrency } from "../utils";
 
 const Landing = () => {
+  const currencyValue = getCurrency();
   useEffect(() => {
-    fetchData();
+    if(!currencyValue) fetchData();
+    const timer = setInterval(() => fetchData(), 1000 * 60 * 60 * 24);
+    return () => clearInterval(timer);
+    // eslint-disable-next-line
   }, [])
 
   return (

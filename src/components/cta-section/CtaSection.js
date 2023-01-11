@@ -4,7 +4,7 @@ import LogoXL from "../../icons/Landing/LogoXL";
 import { getCurrency } from "../../utils";
 
 const CtaSection = () => {
-  const [compraVenta, setCompraVenta] = useState([0, 0]);
+  // const [compraVenta, setCompraVenta] = useState([0, 0]);
   const [cardSegment, setCardSegment] = useState("comprar");
   const [oferta, setOferta] = useState(0);
   const [venta, setVenta] = useState(0);
@@ -17,17 +17,17 @@ const CtaSection = () => {
 
   useEffect(() => {
     setHeight(formRef.current.getBoundingClientRect().height);
-    fetch("http://localhost:3001/currencies")
-      .then((response) => {
-        console.log(response);
-        return response.json();
-      })
-      .then((res) => {
-        setCompraVenta([res.usdpen, 1 / res.usdpen]);
-      })
-      .catch((err) => {
-        console.log("No se pudo recuperar la tasa", err);
-      });
+    // fetch("http://localhost:3001/currencies")
+    //   .then((response) => {
+    //     console.log(response);
+    //     return response.json();
+    //   })
+    //   .then((res) => {
+    //     setCompraVenta([res.usdpen, 1 / res.usdpen]);
+    //   })
+    //   .catch((err) => {
+    //     console.log("No se pudo recuperar la tasa", err);
+    //   });
   }, []);
   const enviarForm = useCallback(() => {
     if (email && oferta && venta && vigencia) {

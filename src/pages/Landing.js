@@ -10,11 +10,13 @@ import Helpers from "../components/helpers/Helpers";
 import FinalCta from "../components/final-cta/FinalCta";
 import Footer from "../components/footer/Footer";
 import { fetchData, getCurrency } from "../utils";
+import Header from "../components/header/Header";
 
 const Landing = () => {
   const currencyValue = getCurrency();
   useEffect(() => {
     if(!currencyValue) fetchData();
+    
     const timer = setInterval(() => fetchData(), 1000 * 60 * 60 * 24);
     return () => clearInterval(timer);
     // eslint-disable-next-line
@@ -22,6 +24,7 @@ const Landing = () => {
 
   return (
     <>
+      <Header />
       <CtaSection />
       <Helpers />
       <Description1 />

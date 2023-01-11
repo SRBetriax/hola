@@ -15,6 +15,7 @@ import Header from "../components/header/Header";
 const Landing = () => {
   const currencyValue = getCurrency();
   useEffect(() => {
+    console.log(currencyValue)
     if(!currencyValue) fetchData();
     
     const timer = setInterval(() => fetchData(), 1000 * 60 * 60 * 24);

@@ -1,0 +1,1 @@
+const API_KEY = process.env.REACT_APP_CURRENCY_API_ACCESS_KEY;

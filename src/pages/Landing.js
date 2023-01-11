@@ -9,19 +9,21 @@ import FAQ from "../components/faq/FAQ";
 import Helpers from "../components/helpers/Helpers";
 import FinalCta from "../components/final-cta/FinalCta";
 import Footer from "../components/footer/Footer";
-import { fetchData, getCurrency } from "../utils";
+import { getCurrency } from "../utils";
+import { fetchCurrency } from "../redux/states/currencySlice";
 import Header from "../components/header/Header";
+import { useDispatch } from "react-redux";
 
 const Landing = () => {
+  const dispatch = useDispatch();
   const currencyValue = getCurrency();
   useEffect(() => {
-    console.log(currencyValue)
-    if(!currencyValue) fetchData();
+    if(!currencyValue) dispatch(fetchCurrency());
     
-    const timer = setInterval(() => fetchData(), 1000 * 60 * 60 * 24);
+    const timer = setInterval(() => fetchCurrency(), 1000 * 60 * 60 * 72);
     return () => clearInterval(timer);
     // eslint-disable-next-line
-  }, [])
+  }, []);
 
   return (
     <>

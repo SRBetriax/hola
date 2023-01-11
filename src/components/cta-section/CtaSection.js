@@ -1,9 +1,10 @@
 import React, { useEffect, useState, useCallback, useRef } from "react";
 import enviado from "../../assets/img/check.png";
 import LogoXL from "../../icons/Landing/LogoXL";
+import { getCurrency } from "../../utils";
 
 const CtaSection = () => {
-  const [compraVenta, setCompraVenta] = useState([0, 0]);
+  // const [compraVenta, setCompraVenta] = useState([0, 0]);
   const [cardSegment, setCardSegment] = useState("comprar");
   const [oferta, setOferta] = useState(0);
   const [venta, setVenta] = useState(0);
@@ -12,20 +13,21 @@ const CtaSection = () => {
   const [done, setDone] = useState(false);
   const [height, setHeight] = useState("auto");
   const formRef = useRef();
+  const currencyValue = getCurrency();
 
   useEffect(() => {
     setHeight(formRef.current.getBoundingClientRect().height);
-    fetch("http://localhost:3001/currencies")
-      .then((response) => {
-        console.log(response);
-        return response.json();
-      })
-      .then((res) => {
-        setCompraVenta([res.usdpen, 1 / res.usdpen]);
-      })
-      .catch((err) => {
-        console.log("No se pudo recuperar la tasa", err);
-      });
+    // fetch("http://localhost:3001/currencies")
+    //   .then((response) => {
+    //     console.log(response);
+    //     return response.json();
+    //   })
+    //   .then((res) => {
+    //     setCompraVenta([res.usdpen, 1 / res.usdpen]);
+    //   })
+    //   .catch((err) => {
+    //     console.log("No se pudo recuperar la tasa", err);
+    //   });
   }, []);
   const enviarForm = useCallback(() => {
     if (email && oferta && venta && vigencia) {
@@ -198,7 +200,8 @@ const CtaSection = () => {
             className="cta-exchange-rate"
             style={{ width: "100%", textAlign: "center" }}
           >
-            Tasa referencial: {compraVenta[0].toString().slice(0, 4)}
+            Tasa referencial: {currencyValue}
+            {/* Tasa referencial: {compraVenta[0].toString().slice(0, 4)} */}
             <br />
             (Fuente: <a href="https://currencylayer.com/">currencylayer.com</a>)
           </p>

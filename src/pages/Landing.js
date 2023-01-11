@@ -9,7 +9,7 @@ import Helpers from "../components/helpers/Helpers";
 import FinalCta from "../components/final-cta/FinalCta";
 import Footer from "../components/footer/Footer";
 
-const Content = () => {
+const Landing = () => {
   return (
     <>
       <CtaSection />
@@ -25,4 +25,4 @@ const Content = () => {
   );
 };
 
-export default Content;
+export default Landing;

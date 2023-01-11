@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback, useRef } from "react";
 import enviado from "../../assets/img/check.png";
 import LogoXL from "../../icons/Landing/LogoXL";
+import { getCurrency } from "../../utils";
 
 const CtaSection = () => {
   const [compraVenta, setCompraVenta] = useState([0, 0]);
@@ -12,6 +13,7 @@ const CtaSection = () => {
   const [done, setDone] = useState(false);
   const [height, setHeight] = useState("auto");
   const formRef = useRef();
+  const currencyValue = getCurrency();
 
   useEffect(() => {
     setHeight(formRef.current.getBoundingClientRect().height);
@@ -198,7 +200,8 @@ const CtaSection = () => {
             className="cta-exchange-rate"
             style={{ width: "100%", textAlign: "center" }}
           >
-            Tasa referencial: {compraVenta[0].toString().slice(0, 4)}
+            Tasa referencial: {currencyValue}
+            {/* Tasa referencial: {compraVenta[0].toString().slice(0, 4)} */}
             <br />
             (Fuente: <a href="https://currencylayer.com/">currencylayer.com</a>)
           </p>

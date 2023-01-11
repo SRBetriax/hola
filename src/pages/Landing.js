@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import CtaSection from "../components/cta-section/CtaSection";
 import Description1 from "../components/description-1/Description1";
 import Description2 from "../components/description-2/Description2";
@@ -8,8 +9,13 @@ import FAQ from "../components/faq/FAQ";
 import Helpers from "../components/helpers/Helpers";
 import FinalCta from "../components/final-cta/FinalCta";
 import Footer from "../components/footer/Footer";
+import { fetchData } from "../utils";
 
-const Content = () => {
+const Landing = () => {
+  useEffect(() => {
+    fetchData();
+  }, [])
+
   return (
     <>
       <CtaSection />
@@ -25,4 +31,4 @@ const Content = () => {
   );
 };
 
-export default Content;
+export default Landing;

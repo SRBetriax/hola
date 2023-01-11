@@ -1,7 +1,9 @@
 export const saveCurrency = (data) => {
-  localStorage.setItem('currency' , data);
+  localStorage.setItem('currency' , JSON.stringify(data.USDPEN));
 }
 
 export const getCurrency = () => {
-  localStorage.getItem('currency');
+  const data = localStorage.getItem('currency');
+
+  return JSON.parse(data);
 }

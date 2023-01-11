@@ -1,6 +1,7 @@
 import React from "react";
 import plataforma from "../../assets/img/Plataforma1.png";
-export default function Description1() {
+
+const Description1 = () => {
   return (
     <article className="container-fluid desc-1" id="producto">
       <div className="row">
@@ -33,4 +34,6 @@ export default function Description1() {
       </div>
     </article>
   );
-}
+};
+
+export default Description1;

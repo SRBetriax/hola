@@ -1,7 +1,9 @@
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import menu from "../../assets/img/btn-menu.png";
 import { useIntersection } from "react-use";
-function Header() {
+
+
+const Header = () => {
   const [menuVisible, setmenuVisible] = useState(false);
   const [fade, setfade] = useState("");
   const sectionRef = useRef();

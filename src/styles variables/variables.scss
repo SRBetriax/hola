@@ -1,0 +1,49 @@
+//COLORS
+$blue: #1243e3;
+$background: #f6f8ff;
+$white: #fff;
+$grey1: #ccc;
+$darkBlue: #091540;
+$grey2: #e0e0e0;
+$darkGrey: #737373;
+$grey3:#d2d2d2;
+$background2: #eef1fa;
+$black: #000;
+
+//MIXIN BUTTONS
+
+//LINED BUTTON
+@mixin linedButton(){
+    border-radius: 8px;
+    border: 2px solid #1243e3;
+    background: transparent;
+    color: #1243e3;
+    padding: 15px 20px;
+    transition: background-color 0.3s ease-out, color 0.3s ease-out;
+    &:hover {
+        color: #fff;
+        background-color: #1243e3;
+            }
+    &:after {
+        display: none;
+            }
+}
+
+//FILLED BUTTON
+@mixin filledButton(){
+    background: #1243e3;
+    color: #fff;
+    padding: 15px 20px;
+    transition: background-color 0.3s ease-out;
+    border-radius: 8px;
+    border: 2px solid #1243e3;
+    &:after {
+        display: none;
+            }
+    &:hover {
+        background: darken(#1243e3, 10);
+            }
+}
+    
+    
+

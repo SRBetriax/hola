@@ -205,7 +205,15 @@ const CtaSection = () => {
             Tasa referencial: {currencyValue || currencyStoraged}
             {/* Tasa referencial: {compraVenta[0].toString().slice(0, 4)} */}
             <br />
-            (Fuente: <a href="https://currencylayer.com/">currencylayer.com</a>)
+            (Fuente:{" "}
+            <a
+              href="https://currencylayer.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              currencylayer.com
+            </a>
+            )
           </p>
         </div>
       </div>

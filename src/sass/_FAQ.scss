@@ -2,9 +2,18 @@
 
 
 article.faq {
-  background-color: #f6f8ff;
+  background-color: $background;
   padding: 5vh 5%;
-  @media screen and (max-width: 1000px) {
+  /*@media screen and (max-width: 1000px) {
+    h3 {
+      font-size: 1.5em;
+      width: 90%;
+    }
+    p {
+      font-size: 1.2em !important;
+    }
+  }*/
+  @include media-down(lg) {
     h3 {
       font-size: 1.5em;
       width: 90%;
@@ -22,12 +31,12 @@ article.faq {
       margin: 10vh 0;
       text-align: center;
       font-weight: 600;
-      color: #091540;
+      color: $darkBlue;
       width: 100%;
     }
   }
   .faq-question {
-    background: #fff;
+    background: $white;
     position: relative;
     margin-bottom: 5vh;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
@@ -43,20 +52,20 @@ article.faq {
     }
     .faq-question-body {
       height: 0;
-
       overflow: hidden;
-      opacity: 0;
+      opacity: 0;   
       &.active {
-        border-top: 1px #ccc solid;
+        border-top: 1px $grey1 solid;
         height: 100%;
         padding: 1em;
         opacity: 1;
-        p {
+        p {       
           text-align: justify;
           font-size: 1.4em;
           font-weight: 200;
         }
       }
     }
+    
   }
 }

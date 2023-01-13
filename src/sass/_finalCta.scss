@@ -4,12 +4,15 @@
 article.final-cta {
   padding: 10vh 5%;
   position: relative;
-  background-color: #f6f8ff;
+  background-color: $background;
   height: 50vh;
   svg {
     position: absolute;
     bottom: 0;
-    @media screen and (max-width: 800px) {
+    /*@media screen and (max-width: 800px) {
+      display: none;
+    }*/
+    @include media-down(md) {
       display: none;
     }
     &.svg-left {
@@ -19,6 +22,7 @@ article.final-cta {
       right: 0;
     }
   }
+  
 
   .col-12 {
     display: flex;
@@ -32,18 +36,18 @@ article.final-cta {
       width: 100%;
       font-size: 2.5em;
       font-weight: 600;
-      color: #091540;
+      color: $darkBlue;
     }
     .cta-button {
       border-radius: 8px;
-      border: 2px solid #1243e3;
+      border: 2px solid $blue;
       background: transparent;
-      color: #1243e3;
+      color: $blue;
       padding: 10px 20px;
       transition: background-color 0.3s ease-out, color 0.3s ease-out;
       &:hover {
-        color: #fff;
-        background-color: #1243e3;
+        color: $white;
+        background-color: $blue;
       }
     }
   }

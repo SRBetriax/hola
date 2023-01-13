@@ -25,6 +25,7 @@ const Landing = () => {
     // eslint-disable-next-line
   }, []);
 
+const Landing = () => {
   return (
     <>
       <Header />

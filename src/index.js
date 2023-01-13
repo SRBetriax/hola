@@ -1,6 +1,11 @@
 import React from "react";
+<<<<<<< HEAD
 import { Provider } from "react-redux";
 import ReactDOM from "react-dom/client";
+=======
+import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+>>>>>>> fdd226dd6450f13017ca065a6160666fe4244893
 import "./sass/index.scss";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";

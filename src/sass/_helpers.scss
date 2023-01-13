@@ -41,17 +41,13 @@ article.helpers {
         width: 100%;
       }
     }
-    .col-12.images {
-      display: flex;
-      justify-content: space-evenly;
-      flex-wrap: wrap;
+  }
 
-      a {
-        height: 100%;
-        img {
-          width: 100%;
-        }
-      }
+  @media screen and (max-width: 700px){
+    .swiper-img{
+      width: 100%;
     }
   }
+
 }
+

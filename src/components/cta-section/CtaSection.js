@@ -146,11 +146,12 @@ const CtaSection = () => {
                     id="valor"
                     step="0.01"
                     onChange={(e) => setVenta(e.target.value)}
+                    style={{fontSize: "13px"}}
                   />
                 </div>
                 <div className="cta-input vigencia">
                   <div className="cta-input-label">
-                    <label htmlFor="">Vigencia</label>
+                    <label htmlFor="">Vigencia <span> d cvmo</span> </label>
                     <i className="tooltip">i</i>
                   </div>
                   <input
@@ -160,6 +161,7 @@ const CtaSection = () => {
                     placeholder="0hr"
                     id="vigencia"
                     onChange={(e) => setVigencia(e.target.value)}
+                    
                   />
                 </div>
                 <div className="cta-input" style={{ width: "100%" }}>

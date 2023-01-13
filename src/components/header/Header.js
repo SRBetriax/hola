@@ -2,6 +2,9 @@ import React, { useState, useRef, useCallback, useEffect } from "react";
 import menu from "../../assets/img/btn-menu.png";
 import { useIntersection } from "react-use";
 import LogoS from "../../icons/Landing/LogoS";
+import Close from "../../icons/Landing/Close";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faBars, faXmark} from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   const [menuVisible, setmenuVisible] = useState(false);
@@ -37,19 +40,26 @@ const Header = () => {
               <LogoS />
             </a>
           </div>
-          {window.innerWidth < 1000 && (
+          {window.innerWidth < 1000 && 
+          // !menuVisible ?
+           (
             <div className="col-6 btn-menu">
-              <img
-                onClick={() => setmenuVisible(!menuVisible)}
-                src={menu}
-                alt=""
-              />
+              <span onClick={() => setmenuVisible(!menuVisible)} className="btn-bar ">
+                <FontAwesomeIcon icon={faBars}  className="bar-icon "/>
+              </span>
             </div>
-          )}
+          )
+          // :
+          // <div className="col-6 btn-menu">
+          //   <span onClick={() => setmenuVisible(!menuVisible)}>
+          //     <FontAwesomeIcon icon={faXmark}  className="close-icon "/>
+          //   </span>
+          // </div>
+        }
           <ul
             className={
-              "col-lg-8 col-6 d-flex justify-content-between mobile" +
-              (menuVisible ? " active" : "")
+              "col-lg-8 col-6 d-flex justify-content-between mobile" 
+              +(menuVisible ? " active" : "")
             }
           >
             <li className="header-link-box ">

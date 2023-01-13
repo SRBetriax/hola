@@ -13,7 +13,7 @@ article.desc-3 {
       color: #091540;
     }
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 850px) {
     .desc-3-content:nth-child(even) {
       flex-flow: column-reverse;
     }

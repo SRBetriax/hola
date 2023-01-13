@@ -137,6 +137,9 @@ main.cta-container {
             .cta-input {
               display: flex;
               flex-direction: column;
+              span{
+                color: $white;
+              }
               @media screen and (min-width: 800px) {
                 width: 45%;
               }

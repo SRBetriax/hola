@@ -4,23 +4,45 @@
   height: 12vh;
   background-color: #f6f8ff;
 }
+
+.bar-icon{
+  color: $blue;
+  height: 25px;
+}
+
+.close-icon{
+  color: $blue;
+  height: 30px;
+}
+
 header.navigation {
-  height: 12vh;
+  height: 14vh;
   position: fixed;
   top: 0;
   z-index: 10000;
-  transition: background-color 0.3s ease-out;
+  transition: 0.3s ease-out;
   &.scrolled {
     background-color: #fff;
   }
   @media screen and (max-width: 1000px) {
-    background: #fff;
-
+    height: 15vh;
+    background: $white;
+    transition: 0.2s ease-out;
+    
     svg {
       width: 100%;
     }
     .row {
       padding: 0 2%;
+    }
+
+    .bar-icon{
+
+      height: 30px;
+    }
+    .close-icon{
+
+      height: 35px;
     }
   }
   .row {
@@ -32,10 +54,7 @@ header.navigation {
       display: flex;
       justify-content: flex-end;
     }
-    div.col-6 img {
-      height: 20px;
-      width: auto;
-    }
+   
     ul {
       padding: 0;
       margin: 0;
@@ -50,9 +69,9 @@ header.navigation {
           flex-direction: column;
           width: 100vw;
           max-width: 100%;
-          background: #fff;
+          background: $white;
           min-height: 65vh;
-          transition: height 0.3s ease-out;
+          transition: 0.2;
           padding-bottom: 5vh;
           align-items: center;
           li {
@@ -85,7 +104,9 @@ header.navigation {
           a {
             background: #1243e3;
             color: #fff;
-            padding: 15px 20px;
+            padding: 10px 15px;
+            margin-bottom: 2px;
+            margin-right: 5px;
             transition: background-color 0.3s ease-out;
             border-radius: 8px;
             border: 2px solid #1243e3;
@@ -103,7 +124,8 @@ header.navigation {
             border: 2px solid #1243e3;
             background: transparent;
             color: #1243e3;
-            padding: 15px 20px;
+            padding: 10px 15px;
+            margin-bottom: 2px;
             transition: background-color 0.3s ease-out, color 0.3s ease-out;
             &:hover {
               color: #fff;
@@ -115,7 +137,7 @@ header.navigation {
           }
         }
         a {
-          color: #091540;
+          color: $darkBlue;
           text-decoration: none;
           position: relative;
           padding: 15px;

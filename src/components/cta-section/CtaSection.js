@@ -53,7 +53,6 @@ const CtaSection = () => {
           setVenta(0);
           setVigencia(0);
           setDone(true);
-          //console.log(e);
           formRef.current.reset();
           let url;
           let callback = function () {
@@ -85,10 +84,10 @@ const CtaSection = () => {
             Tú pones el precio a tus dólares.
           </h3>
           <a href="https://app.betriax.com/register">
-            <button className="cta-button">Entra ahora, es gratis</button>
+            <button className="cta-button">Regístrate ahora, es gratis</button>
           </a>
           <a href="https://app.betriax.com/">
-            <span className="cta-enter">O ingresa ahora</span>
+            <span className="cta-enter">O inicia sesión aquí</span>
           </a>
         </div>
         <div className="col-md-6 col-sm-12 cta-card-column">
@@ -207,7 +206,15 @@ const CtaSection = () => {
             Tasa referencial: {currencyValue || currencyStoraged}
             {/* Tasa referencial: {compraVenta[0].toString().slice(0, 4)} */}
             <br />
-            (Fuente: <a href="https://currencylayer.com/">currencylayer.com</a>)
+            (Fuente:{" "}
+            <a
+              href="https://currencylayer.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              currencylayer.com
+            </a>
+            )
           </p>
         </div>
       </div>

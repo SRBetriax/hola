@@ -1,15 +1,18 @@
 @import "../styles\ variables/variables.scss";
 
-
 article.helpers {
   .helpers-apoyo {
-    background-color: #eef1fa;
+    background-color: $background2;
     padding: 5vh 5%;
     .col-12 {
       display: flex;
       justify-content: space-evenly;
       align-items: center;
-      @media screen and (max-width: 1000px) {
+      /*@media screen and (max-width: 1000px) {
+        flex-direction: column;
+        justify-content: center;
+      }*/
+      @include media-down(lg) {
         flex-direction: column;
         justify-content: center;
       }
@@ -21,7 +24,11 @@ article.helpers {
           max-height: 120px;
         }
         max-width: 30vw;
-        @media screen and (max-width: 800px) {
+        /*@media screen and (max-width: 800px) {
+          width: 100%;
+          max-width: 100%;
+        }*/
+        @include media-down(md) {
           width: 100%;
           max-width: 100%;
         }
@@ -29,7 +36,7 @@ article.helpers {
     }
   }
   .helpers-brands {
-    background-color: #fff;
+    background-color: $white;
     padding: 5vh 5%;
     .col-12 {
       h2 {
@@ -37,7 +44,7 @@ article.helpers {
         margin: 10vh 0;
         text-align: center;
         font-weight: 600;
-        color: #091540;
+        color: $darkBlue;
         width: 100%;
       }
     }

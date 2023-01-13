@@ -2,7 +2,7 @@
 
 
 article.desc-4 {
-  background: #eef1fa;
+  background: $background2;
   padding: 5vh 5%;
   .desc-4-title {
     width: 100%;
@@ -11,15 +11,20 @@ article.desc-4 {
       margin: 10vh 0;
       text-align: center;
       font-weight: 600;
-      color: #091540;
+      color: $darkBlue;
       width: 100%;
     }
   }
 
   h3 {
     font-size: 1.6em;
-    @media screen and (max-width: 600px) {
+    /*@media screen and (max-width: 600px) {
       text-align: center;
+      margin-top: 15px;
+    }*/
+    @include media-down(sm) {
+      text-align: center;
+      margin-top: 15px;
     }
   }
   p {

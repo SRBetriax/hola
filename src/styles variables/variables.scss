@@ -7,10 +7,40 @@ $darkBlue: #091540;
 $grey2: #e0e0e0;
 $darkGrey: #737373;
 $grey3:#d2d2d2;
+$grey4:#aaaaaa;
 $background2: #eef1fa;
 $black: #000;
 
-//MIXIN BUTTONS
+//MAPS 
+$breakpoints: (
+    sm: 600px,
+    md: 800px,
+    md2: 850px,
+    lg: 1000px
+);
+
+
+
+//MEDIA SCREEN 
+@mixin media-down($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint){
+        @media screen and (max-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    } @else {
+        @warn "The key "#{$breakpoint}" do not exist. Check the map for syntaxis errors."
+    }
+};
+
+@mixin media-up($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint){
+        @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    } @else {
+        @warn "The key "#{$breakpoint}" do not exist. Check the map for syntaxis errors."
+    }
+};
 
 //LINED BUTTON
 @mixin linedButton(){
@@ -45,5 +75,5 @@ $black: #000;
             }
 }
     
-    
+
 

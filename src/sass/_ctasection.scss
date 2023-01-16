@@ -1,6 +1,5 @@
 @import "../styles\ variables/variables.scss";
 
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -15,10 +14,6 @@ input[type="number"] {
 main.cta-container {
   position: relative;
   background: $background;
-  /*@media screen and (min-width: 1000px) {
-    min-height: 80vh;
-    overflow-y: hidden;
-  }*/
   @include media-up(lg) {
     min-height: 80vh;
     overflow-y: hidden;
@@ -27,15 +22,9 @@ main.cta-container {
   svg {
     position: absolute;
     left: -1px;
-    /*@media screen and (min-width: 1000px) {
-      height: 115%;
-    }*/
     @include media-up(lg) {
       height: 115%;
     }
-    /*@media screen and (max-width: 1000px) {
-      width: 120%;
-    }*/
     @include media-down(lg) {
       width: 120%;
     }
@@ -86,10 +75,6 @@ main.cta-container {
       justify-content: center;
       align-items: center;
       flex-direction: column;
-
-      /*@media screen and (min-width: 1000px) {
-        padding: 0.5rem 10%;
-      }*/
       @include media-up(lg) {
         padding: 0.5rem 10%;
       }
@@ -120,9 +105,6 @@ main.cta-container {
           justify-content: center;
           padding: 1em;
           form {
-            /*@media screen and (min-width: 800px) {
-              padding: 5%;
-            }*/
             @include media-up(md) {
               padding: 5%;
             }
@@ -158,13 +140,9 @@ main.cta-container {
             .cta-input {
               display: flex;
               flex-direction: column;
-              span{
+              span {
                 color: $white;
               }
-              @media screen and (min-width: 800px) {
-              /*@media screen and (min-width: 800px) {
-                width: 45%;
-              }*/
               @include media-up(md) {
                 width: 45%;
               }
@@ -178,7 +156,7 @@ main.cta-container {
                 transition: border 0.3s ease-out;
                 outline: transparent;
                 &:focus {
-                  border-bottom: 2px solid  $blue;
+                  border-bottom: 2px solid $blue;
                   box-shadow: 0px 1px 0px $grey1;
                 }
               }
@@ -204,9 +182,6 @@ main.cta-container {
           }
           .cta-card-confirmation {
             padding: 20px;
-            /*@media screen and (min-width: 800px) {
-              padding: 5%;
-            }*/
             @include media-up(md) {
               padding: 5%;
             }
@@ -225,5 +200,4 @@ main.cta-container {
       }
     }
   }
-}
 }

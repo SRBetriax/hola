@@ -9,9 +9,6 @@ article.final-cta {
   svg {
     position: absolute;
     bottom: 0;
-    /*@media screen and (max-width: 800px) {
-      display: none;
-    }*/
     @include media-down(md) {
       display: none;
     }
@@ -48,6 +45,10 @@ article.final-cta {
       &:hover {
         color: $white;
         background-color: $blue;
+      }
+      @include media-down(sm) {
+        background-color: $blue;
+        color: $white;
       }
     }
   }

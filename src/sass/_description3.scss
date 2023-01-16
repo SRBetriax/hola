@@ -13,13 +13,7 @@ article.desc-3 {
       color: $darkBlue;
     }
   }
-  @media screen and (max-width: 850px) {
-  /*@media screen and (max-width: 600px) {
-    .desc-3-content:nth-child(even) {
-      flex-flow: column-reverse;
-    }
-  }*/
-  @include media-down(md2) {
+  @include media-down(lg) {
     .desc-3-content:nth-child(even) {
       flex-flow: column-reverse;
     }
@@ -34,9 +28,6 @@ article.desc-3 {
 
       h3 {
         font-size: 1.6em;
-        /*@media screen and (max-width: 600px) {
-          text-align: center;
-        }*/
         @include media-down(sm) {
           text-align: center;
         }
@@ -45,9 +36,6 @@ article.desc-3 {
         text-align: justify;
         font-size: 1.4em;
         font-weight: 200;
-        /*@media screen and (min-width: 1000px) {
-          width: 80%;
-        }*/
         @include media-up(lg) {
           width: 80%;
         }
@@ -57,14 +45,9 @@ article.desc-3 {
       display: flex;
       justify-content: center;
       align-items: center;
-
-      /*@media screen and (max-width: 1000px) {
-        margin-bottom: 5vh;
-      }*/
       @include media-down(lg) {
         margin-bottom: 5vh;
       }
     }
   }
-}
 }

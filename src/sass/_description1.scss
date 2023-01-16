@@ -2,9 +2,6 @@
 
 .desktop {
   display: inline;
-  /*@media screen and (min-width: 1000px) {
-    display: none;
-  }*/
   @include media-up(lg) {
     display: none;
   }
@@ -30,11 +27,6 @@ article.desc-1 {
     flex-direction: column;
     font-size: 1.4em;
     font-weight: 200;
-    /*@media screen and (min-width: 1000px) {
-      p {
-        text-align: end;
-      }
-    }*/
     @include media-up(lg) {
       p {
         text-align: end;

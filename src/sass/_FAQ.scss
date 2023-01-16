@@ -4,15 +4,6 @@
 article.faq {
   background-color: $background;
   padding: 5vh 5%;
-  /*@media screen and (max-width: 1000px) {
-    h3 {
-      font-size: 1.5em;
-      width: 90%;
-    }
-    p {
-      font-size: 1.2em !important;
-    }
-  }*/
   @include media-down(lg) {
     h3 {
       font-size: 1.5em;

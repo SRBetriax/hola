@@ -14,12 +14,11 @@ $black: #000;
 //MAPS 
 $breakpoints: (
     sm: 600px,
+    sm2: 750px,
     md: 800px,
     md2: 850px,
     lg: 1000px
 );
-
-
 
 //MEDIA SCREEN 
 @mixin media-down($breakpoint) {

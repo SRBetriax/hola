@@ -12,14 +12,6 @@ footer.footer {
       height: 100%;
       align-items: center;
       justify-content: space-evenly;
-      /*@media screen and (max-width: 800px) {
-        flex-flow: column;
-        justify-content: space-between;
-        h3 {
-          margin-top: 5vh;
-          text-align: center;
-        }
-      }*/
       @include media-down(md) {
         flex-flow: column;
         justify-content: space-between;

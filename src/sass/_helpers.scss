@@ -8,10 +8,6 @@ article.helpers {
       display: flex;
       justify-content: space-evenly;
       align-items: center;
-      /*@media screen and (max-width: 1000px) {
-        flex-direction: column;
-        justify-content: center;
-      }*/
       @include media-down(lg) {
         flex-direction: column;
         justify-content: center;
@@ -24,10 +20,6 @@ article.helpers {
           max-height: 120px;
         }
         max-width: 30vw;
-        /*@media screen and (max-width: 800px) {
-          width: 100%;
-          max-width: 100%;
-        }*/
         @include media-down(md) {
           width: 100%;
           max-width: 100%;
@@ -50,11 +42,10 @@ article.helpers {
     }
   }
 
-  @media screen and (max-width: 700px){
+  @include media-down (sm2){
     .swiper-img{
       width: 100%;
     }
   }
-
 }
 

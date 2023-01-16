@@ -8,7 +8,7 @@ article.desc-4 {
     width: 100%;
     h2 {
       font-size: 2.5em;
-      margin: 10vh 0;
+      margin: 5vh 0;
       text-align: center;
       font-weight: 600;
       color: $darkBlue;
@@ -18,13 +18,10 @@ article.desc-4 {
 
   h3 {
     font-size: 1.6em;
-    /*@media screen and (max-width: 600px) {
-      text-align: center;
-      margin-top: 15px;
-    }*/
+    margin-top: 20px;
     @include media-down(sm) {
       text-align: center;
-      margin-top: 15px;
+      
     }
   }
   p {

@@ -1,8 +1,10 @@
 import axios from "axios";
 // eslint-disable-next-line
 import React, { useEffect, useState, useCallback, useRef } from "react";
+// eslint-disable-next-line
 import { Link } from "react-router-dom";
 import enviado from "../img/check.png";
+
 const CtaSection = () => {
   const [compraVenta, setCompraVenta] = useState([0, 0]);
   const [cardSegment, setCardSegment] = useState("comprar");
@@ -23,7 +25,6 @@ const CtaSection = () => {
     setHeight(formRef.current.getBoundingClientRect().height);
     axios("https://apilayer.net/api/live?access_key=5d2e6f9b9ddb2e9e666c855856501ec6&currencies=mxn,pen,clp,cop&source=USD&format=1")
       .then((res) => {
-        console.log("0",res)
         setCompraVenta([res.data.quotes.USDPEN, 1 / res.data.quotes.USDPEN]);
       })
       .catch((err) => {
@@ -101,12 +102,12 @@ const CtaSection = () => {
             segura del mercado de cambio de divisas. <br />
             Tú pones el precio a tus dólares.
           </h3>
-            <Link to={'/maintence'}>
+            <a href="https://app.betriax.com/register">
               <button className="cta-button">Entra ahora, es gratis</button>
-            </Link>
-            <Link to={'/maintence'}>
+            </a>
+            <a href="https://app.betriax.com/register">
               <span className="cta-enter">O ingresa ahora</span>
-            </Link>
+            </a>
         </div>
         <div className="col-md-6 col-sm-12 cta-card-column">
           <div className="cta-card">

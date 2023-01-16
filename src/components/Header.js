@@ -28,7 +28,6 @@ function Header() {
   });
 
   const location = useLocation()
-  console.log('location', location.pathname.split('/')[1])
   return (
     <>
     {location.pathname.split('/')[1] !=='maintence'?
@@ -112,14 +111,20 @@ function Header() {
               <a href="#preguntas-frecuentes">Preguntas frecuentes</a>
             </li>
             <li className="header-link-box cta personas">
-              <Link to="/maintence">
+              <a href="https://app.betriax.com/register">
                 Personas
-              </Link>
+              </a>
+              {/* <Link to="/maintence">
+                Personas
+              </Link> */}
             </li>
             <li className="header-link-box cta">
-              <Link to="/maintence">
+              <a href="https://app.betriax.com/register">
                 Empresas
-              </Link>
+              </a>
+              {/* <Link to="/maintence">
+                Empresas
+              </Link> */}
             </li>
           </ul>
         </nav>

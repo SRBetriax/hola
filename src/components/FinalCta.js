@@ -1,4 +1,5 @@
 import React from "react";
+// eslint-disable-next-line
 import { Link } from "react-router-dom";
 
 export default function FinalCta() {
@@ -482,12 +483,12 @@ export default function FinalCta() {
 
         <div className="col-12">
           <h2>Compra o vende tus dólares ahora.</h2>
-          {/* <a href="https://app.betriax.com/register">
+          <a href="https://app.betriax.com/register">
             <button className="cta-button">Regístrate gratis</button>
-          </a> */}
-          <Link to="/maintence">
+          </a>
+          {/* <Link to="/maintence">
             <button className="cta-button">Regístrate gratis</button>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </article>

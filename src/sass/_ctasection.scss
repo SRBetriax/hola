@@ -161,10 +161,7 @@ main.cta-container {
               span{
                 color: $white;
               }
-              @media screen and (min-width: 800px) {
-              /*@media screen and (min-width: 800px) {
-                width: 45%;
-              }*/
+              
               @include media-up(md) {
                 width: 45%;
               }
@@ -225,5 +222,4 @@ main.cta-container {
       }
     }
   }
-}
 }

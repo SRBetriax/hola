@@ -1,0 +1,41 @@
+@import "../styles\ variables/variables.scss";
+
+.desktop {
+  display: inline;
+  @include media-up(lg) {
+    display: none;
+  }
+}
+article.desc-1 {
+  background: $background2;
+  min-height: 80vh;
+  align-content: center;
+  padding: 5vh 5%;
+  .desc1-title {
+    font-size: 2.5em;
+    margin: 2vh 0;
+    text-align: center;
+    font-weight: 600;
+    color: $darkBlue;
+  }
+
+  .desc1-text {
+    color: $darkBlue;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    font-size: 1.4em;
+    font-weight: 200;
+    @include media-up(lg) {
+      p {
+        text-align: end;
+      }
+    }
+  }
+  .desc1-image {
+    img {
+      width: 100%;
+    }
+  }
+}

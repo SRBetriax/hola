@@ -1,0 +1,55 @@
+@import "../styles\ variables/variables.scss";
+
+
+article.final-cta {
+  padding: 10vh 5%;
+  position: relative;
+  background-color: $background;
+  height: 50vh;
+  svg {
+    position: absolute;
+    bottom: 0;
+    @include media-down(md) {
+      display: none;
+    }
+    &.svg-left {
+      left: 0;
+    }
+    &.svg-right {
+      right: 0;
+    }
+  }
+  
+
+  .col-12 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    h2 {
+      margin-bottom: 2vh;
+      text-align: center;
+      width: 100%;
+      font-size: 2.5em;
+      font-weight: 600;
+      color: $darkBlue;
+    }
+    .cta-button {
+      border-radius: 8px;
+      border: 2px solid $blue;
+      background: transparent;
+      color: $blue;
+      padding: 10px 20px;
+      transition: background-color 0.3s ease-out, color 0.3s ease-out;
+      &:hover {
+        color: $white;
+        background-color: $blue;
+      }
+      @include media-down(sm) {
+        background-color: $blue;
+        color: $white;
+      }
+    }
+  }
+}

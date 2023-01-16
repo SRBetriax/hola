@@ -1,0 +1,30 @@
+@import "../styles\ variables/variables.scss";
+
+
+footer.footer {
+  background-color: $black;
+  padding: 7vh 5%;
+  min-height: 10vh;
+  .row {
+    height: 100%;
+    .col-12 {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      justify-content: space-evenly;
+      @include media-down(md) {
+        flex-flow: column;
+        justify-content: space-between;
+        h3 {
+          margin-top: 5vh;
+          text-align: center;
+        }
+      }
+      h3 {
+        color: $grey1;
+        font-size: 1em;
+        font-weight: 200;
+      }
+    }
+  }
+}

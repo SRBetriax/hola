@@ -1,9 +1,9 @@
 import React from 'react';
 import { ProgressBar } from 'react-loader-spinner';
 
-import logoBetriax from '../img/logo.png'
-import P2P from '../img/Plataforma1.png'
-import "../styles/_maintence.css"
+import logoBetriax from '../assets/img/logo.png'
+import P2P from '../assets/img/Plataforma1.png'
+import "../sass/_maintence.css"
 import { Link } from 'react-router-dom';
 
 

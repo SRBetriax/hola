@@ -1,8 +1,10 @@
+@import "../styles\ variables/variables.scss";
+
 article.desc-2 {
   min-height: 60vh;
   display: flex;
   align-items: center;
-  background: #f6f8ff;
+  background: $background;
   justify-content: space-between;
   padding: 5vh 5%;
   .row {

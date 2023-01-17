@@ -1,16 +1,19 @@
+@import "../styles\ variables/variables.scss";
+
+
 article.desc-3 {
   padding: 3vh 5%;
-  background-color: #f6f8ff;
+  background-color: $background;
   .desc-3-title {
     h2 {
       font-size: 2.5em;
       margin: 10vh 0;
       text-align: center;
       font-weight: 600;
-      color: #091540;
+      color: $darkBlue;
     }
   }
-  @media screen and (max-width: 600px) {
+  @include media-down(lg) {
     .desc-3-content:nth-child(even) {
       flex-flow: column-reverse;
     }
@@ -25,7 +28,7 @@ article.desc-3 {
 
       h3 {
         font-size: 1.6em;
-        @media screen and (max-width: 600px) {
+        @include media-down(sm) {
           text-align: center;
         }
       }
@@ -33,7 +36,7 @@ article.desc-3 {
         text-align: justify;
         font-size: 1.4em;
         font-weight: 200;
-        @media screen and (min-width: 1000px) {
+        @include media-up(lg) {
           width: 80%;
         }
       }
@@ -42,7 +45,7 @@ article.desc-3 {
       display: flex;
       justify-content: center;
       align-items: center;
-      @media screen and (max-width: 1000px) {
+      @include media-down(lg) {
         margin-bottom: 5vh;
       }
     }

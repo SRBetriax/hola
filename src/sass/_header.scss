@@ -1,7 +1,20 @@
+@import "../styles\ variables/variables.scss";
+
 .spacing {
   height: 12vh;
-  background-color: #f6f8ff;
+  background-color: $background;
 }
+
+.bar-icon{
+  color: $blue;
+  height: 25px;
+}
+
+.close-icon{
+  color: $blue;
+  height: 30px;
+}
+
 header.navigation {
   height: 12vh;
   position: fixed;
@@ -9,14 +22,11 @@ header.navigation {
   z-index: 10000;
   transition: background-color 0.3s ease-out;
   &.scrolled {
-    background-color: #fff;
+    background-color:  $white;
   }
-  @media screen and (max-width: 1000px) {
-    background: #fff;
-
-    svg {
-      width: 100%;
-    }
+  @include media-down(lg) {
+    background: $white;
+    height: 10vh;
     .row {
       padding: 0 2%;
     }
@@ -30,16 +40,13 @@ header.navigation {
       display: flex;
       justify-content: flex-end;
     }
-    div.col-6 img {
-      height: 20px;
-      width: auto;
-    }
+   
     ul {
       padding: 0;
       margin: 0;
       list-style: none;
       transition: height 0.3s ease-out;
-      @media screen and (max-width: 1000px) {
+      @include media-down(lg) {
         &.mobile.active {
           position: absolute;
           display: flex !important;
@@ -48,7 +55,7 @@ header.navigation {
           flex-direction: column;
           width: 100vw;
           max-width: 100%;
-          background: #fff;
+          background: $white;
           min-height: 65vh;
           transition: height 0.3s ease-out;
           padding-bottom: 5vh;
@@ -60,10 +67,10 @@ header.navigation {
             justify-content: center;
             align-items: center;
             &:hover {
-              background: #ccc;
+              background: $grey1;
             }
             &:hover:last-child {
-              background: #fff;
+              background: $white;
             }
           }
           a {
@@ -83,29 +90,37 @@ header.navigation {
           a {
             background: #1243e3;
             color: #fff;
+            padding: 10px 15px;
+            margin-bottom: 2px;
+            margin-right: 5px;
+            background: $blue;
+            color: $white;
             padding: 15px 20px;
             transition: background-color 0.3s ease-out;
             border-radius: 8px;
-            border: 2px solid #1243e3;
+            border: 2px solid $blue;
             &:after {
               display: none;
             }
             &:hover {
-              background: darken(#1243e3, 10);
+              background: darken($blue, 10);
             }
           }
         }
         &.cta.personas {
           a {
             border-radius: 8px;
-            border: 2px solid #1243e3;
+            border: 2px solid $blue;
             background: transparent;
             color: #1243e3;
+            padding: 10px 15px;
+            margin-bottom: 2px;
+            color: $blue;
             padding: 15px 20px;
             transition: background-color 0.3s ease-out, color 0.3s ease-out;
             &:hover {
-              color: #fff;
-              background-color: #1243e3;
+              color: $white;
+              background-color: $blue;
             }
             &:after {
               display: none;
@@ -113,7 +128,7 @@ header.navigation {
           }
         }
         a {
-          color: #091540;
+          color: $darkBlue;
           text-decoration: none;
           position: relative;
           padding: 15px;
@@ -127,7 +142,7 @@ header.navigation {
             width: 0%;
             content: ".";
             color: transparent;
-            background: #091540;
+            background: $darkBlue;
             height: 2px;
             transition: all 0.3s ease-out;
           }
@@ -136,7 +151,7 @@ header.navigation {
           }
           &#blog {
             cursor: not-allowed;
-            color: #ccc;
+            color: $grey1;
           }
           &#blog:hover:after {
             width: 0;

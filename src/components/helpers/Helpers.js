@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import factorya from "../../assets/img/factorya.png";
 import startup from "../../assets/img/startup-chile.png";
 import contexto from "../../assets/img/contexto.png";
@@ -9,26 +9,15 @@ import wild from "../../assets/img/wild.png";
 import tec from "../../assets/img/tecmonterrey.png";
 import utecventures from "../../assets/img/utecventures.png";
 import foundersinstitute from "../../assets/img/foundersinstitute.png";
+
 //import Swiper from "react-id-swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+
 //import "swiper/swiper.scss";
+import "swiper/css";
+import { Autoplay } from "swiper";
 
 export default function Helpers() {
-  const gallerySwiperRef = useRef(null);
-  const params = {
-    slidesPerView: window.innerWidth > 800 ? 4.5 : 1.8,
-    spaceBetween: window.innerWidth > 800 ? 100 : 30,
-    slidesPerGroup: 1,
-    loop: true,
-  };
-
-  useEffect(() => {
-    const gallerySwiper = gallerySwiperRef.current.swiper;
-    setInterval(() => {
-      gallerySwiper.slideNext(500, false);
-    }, 2000);
-  }, []);
   return (
     <article className="container-fluid helpers">
       <div className="row helpers-apoyo">
@@ -51,14 +40,24 @@ export default function Helpers() {
           <h2>Betriax en los medios</h2>
         </div>
         <div className="col-12 images">
-          <Swiper {...params} ref={gallerySwiperRef}>
+          <Swiper
+            slidesPerView={3}
+            spaceBetween={30}
+            centeredSlides={true}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            modules={[Autoplay]}
+            className="mySwiper"
+          >
             <SwiperSlide>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.contxto.com/es/colombia-es/15-fintechs-ganando-traccion-en-bogota/"
               >
-                <img src={contexto} alt="" />
+                <img src={contexto} alt="" className="swiper-img" />
               </a>
             </SwiperSlide>
             <SwiperSlide>
@@ -67,7 +66,7 @@ export default function Helpers() {
                 rel="noopener noreferrer"
                 href="https://nearshoreamericas.com/scotiabank-selects-10-latam-fintech-startups-acceleration-program/"
               >
-                <img src={nearshore} alt="" />
+                <img src={nearshore} alt="" className="swiper-img" />
               </a>
             </SwiperSlide>
             <SwiperSlide>
@@ -76,7 +75,7 @@ export default function Helpers() {
                 rel="noopener noreferrer"
                 href="https://www.entrepreneur.com/article/338725"
               >
-                <img src={entrepeneur} alt="" />
+                <img src={entrepeneur} alt="" className="swiper-img" />
               </a>
             </SwiperSlide>
             <SwiperSlide>
@@ -85,7 +84,7 @@ export default function Helpers() {
                 rel="noopener noreferrer"
                 href="https://www.youtube.com/watch?v=3EBRn2D6o4U"
               >
-                <img src={radiolab} alt="" />
+                <img src={radiolab} alt="" className="swiper-img" />
               </a>
             </SwiperSlide>
             <SwiperSlide>
@@ -94,7 +93,7 @@ export default function Helpers() {
                 rel="noopener noreferrer"
                 href="https://wildentrepreneur.org/conoce-las-9-empresas-fintech-que-participaron-en-el-investor-day-de-factorya/"
               >
-                <img src={wild} alt="" />
+                <img src={wild} alt="" className="swiper-img" />
               </a>
             </SwiperSlide>
             <SwiperSlide>
@@ -103,7 +102,7 @@ export default function Helpers() {
                 rel="noopener noreferrer"
                 href="https://tec.mx/es/noticias/nacional/emprendedores/con-adn-emprendedor-las-startups-apoyadas-por-el-tec-y-scotiabank"
               >
-                <img src={tec} alt="" />
+                <img src={tec} alt="" className="swiper-img" />
               </a>
             </SwiperSlide>
           </Swiper>

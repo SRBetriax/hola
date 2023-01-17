@@ -7,10 +7,15 @@ import { getCurrency } from "../../utils";
 const CtaSection = () => {
   // const [compraVenta, setCompraVenta] = useState([0, 0]);
   const [cardSegment, setCardSegment] = useState("comprar");
+  // eslint-disable-next-line
   const [oferta, setOferta] = useState(0);
+  // eslint-disable-next-line
   const [venta, setVenta] = useState(0);
+  // eslint-disable-next-line
   const [vigencia, setVigencia] = useState(0);
+  // eslint-disable-next-line
   const [email, setEmail] = useState("");
+  // eslint-disable-next-line
   const [done, setDone] = useState(false);
   const [height] = useState("auto");
   const formRef = useRef();
@@ -31,6 +36,7 @@ const CtaSection = () => {
     //     console.log("No se pudo recuperar la tasa", err);
     //   });
   }, []);
+  // eslint-disable-next-line
   const enviarForm = useCallback(() => {
     if (email && oferta && venta && vigencia) {
       let data = JSON.stringify({
@@ -53,7 +59,6 @@ const CtaSection = () => {
           setVenta(0);
           setVigencia(0);
           setDone(true);
-          //console.log(e);
           formRef.current.reset();
           let url;
           let callback = function () {
@@ -85,10 +90,10 @@ const CtaSection = () => {
             Tú pones el precio a tus dólares.
           </h3>
           <a href="https://app.betriax.com/register">
-            <button className="cta-button">Entra ahora, es gratis</button>
+            <button className="cta-button">Regístrate ahora, es gratis</button>
           </a>
           <a href="https://app.betriax.com/">
-            <span className="cta-enter">O ingresa ahora</span>
+            <span className="cta-enter">O inicia sesión aquí</span>
           </a>
         </div>
         <div className="col-md-6 col-sm-12 cta-card-column">
@@ -146,6 +151,7 @@ const CtaSection = () => {
                     id="valor"
                     step="0.01"
                     onChange={(e) => setVenta(e.target.value)}
+                    style={{fontSize: "13px"}}
                   />
                 </div>
                 <div className="cta-input vigencia">
@@ -160,6 +166,7 @@ const CtaSection = () => {
                     placeholder="0hr"
                     id="vigencia"
                     onChange={(e) => setVigencia(e.target.value)}
+                    
                   />
                 </div>
                 <div className="cta-input" style={{ width: "100%" }}>
@@ -177,7 +184,7 @@ const CtaSection = () => {
                 <button
                   onClick={(e) => {
                     e.preventDefault();
-                    enviarForm();
+                    // enviarForm();
                   }}
                   className="cta-send"
                 >
@@ -205,7 +212,15 @@ const CtaSection = () => {
             Tasa referencial: {currencyValue || currencyStoraged}
             {/* Tasa referencial: {compraVenta[0].toString().slice(0, 4)} */}
             <br />
-            (Fuente: <a href="https://currencylayer.com/">currencylayer.com</a>)
+            (Fuente:{" "}
+            <a
+              href="https://currencylayer.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              currencylayer.com
+            </a>
+            )
           </p>
         </div>
       </div>

@@ -1,5 +1,8 @@
+@import "../styles\ variables/variables.scss";
+
+
 footer.footer {
-  background-color: #000;
+  background-color: $black;
   padding: 7vh 5%;
   min-height: 10vh;
   .row {
@@ -9,7 +12,7 @@ footer.footer {
       height: 100%;
       align-items: center;
       justify-content: space-evenly;
-      @media screen and (max-width: 800px) {
+      @include media-down(md) {
         flex-flow: column;
         justify-content: space-between;
         h3 {
@@ -18,7 +21,7 @@ footer.footer {
         }
       }
       h3 {
-        color: #ccc;
+        color: $grey1;
         font-size: 1em;
         font-weight: 200;
       }

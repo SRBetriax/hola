@@ -1,11 +1,13 @@
+@import "../styles\ variables/variables.scss";
+
 .desktop {
   display: inline;
-  @media screen and (min-width: 1000px) {
+  @include media-up(lg) {
     display: none;
   }
 }
 article.desc-1 {
-  background: #eef1fa;
+  background: $background2;
   min-height: 80vh;
   align-content: center;
   padding: 5vh 5%;
@@ -14,18 +16,18 @@ article.desc-1 {
     margin: 2vh 0;
     text-align: center;
     font-weight: 600;
-    color: #091540;
+    color: $darkBlue;
   }
 
   .desc1-text {
-    color: #091540;
+    color: $darkBlue;
     display: flex;
     justify-content: center;
     align-items: flex-end;
     flex-direction: column;
     font-size: 1.4em;
     font-weight: 200;
-    @media screen and (min-width: 1000px) {
+    @include media-up(lg) {
       p {
         text-align: end;
       }

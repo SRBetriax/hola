@@ -1,22 +1,27 @@
+@import "../styles\ variables/variables.scss";
+
+
 article.desc-4 {
-  background: #eef1fa;
+  background: $background2;
   padding: 5vh 5%;
   .desc-4-title {
     width: 100%;
     h2 {
       font-size: 2.5em;
-      margin: 10vh 0;
+      margin: 5vh 0;
       text-align: center;
       font-weight: 600;
-      color: #091540;
+      color: $darkBlue;
       width: 100%;
     }
   }
 
   h3 {
     font-size: 1.6em;
-    @media screen and (max-width: 600px) {
+    margin-top: 20px;
+    @include media-down(sm) {
       text-align: center;
+      
     }
   }
   p {

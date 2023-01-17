@@ -10,6 +10,7 @@ export const EmptyState = {
 export const fetchCurrency = createAsyncThunk("currency/fetchCurrency", async () => {
   try {
     const { data } = await axios.get(currencyUrl);
+    
 
     const price = Math.round(data.quotes.USDPEN * 100) / 100;
 

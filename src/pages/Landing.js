@@ -21,8 +21,13 @@ const Landing = () => {
   const needToUpdate = callTime();
 
   useEffect(() => {
+    
+    //si no hay nada en el estado que despache la accion
     if (!currencyValue) dispatch(fetchCurrency());
+
+    //si se necesita actualizar que dispache la acción
     if (needToUpdate) dispatch(fetchCurrency());
+
     // eslint-disable-next-line
   }, []);
   

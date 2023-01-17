@@ -15,7 +15,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Landing />} />
-          <Route path="/maintence/" element={<Maintenance />} />
+          <Route path="/maintenance/" element={<Maintenance />} />
         </Routes>
       </BrowserRouter>
     </>

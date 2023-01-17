@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+/*import React, {useEffect} from 'react';
 import Header from './Header';
 import Content from './Content';
 import AOS from 'aos';
@@ -22,4 +22,4 @@ function App() {
   );
 }
 
-export default App;
+export default App;*/

@@ -13,19 +13,24 @@ import { getCurrency } from "../utils";
 import { fetchCurrency } from "../redux/states/currencySlice";
 import Header from "../components/header/Header";
 import { useDispatch } from "react-redux";
+import { callTime } from './../utils/index';
 
 const Landing = () => {
   const dispatch = useDispatch();
   const currencyValue = getCurrency();
+  const needToUpdate = callTime();
 
   useEffect(() => {
+    
+    //si no hay nada en el estado que despache la accion
     if (!currencyValue) dispatch(fetchCurrency());
 
-    const timer = setInterval(() => fetchCurrency(), 1000 * 60 * 60 * 72);
-    return () => clearInterval(timer);
+    //si se necesita actualizar que dispache la acción
+    if (needToUpdate) dispatch(fetchCurrency());
+
     // eslint-disable-next-line
   }, []);
-
+  
   return (
     <>
       <Header />

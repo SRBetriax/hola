@@ -7,10 +7,15 @@ import { getCurrency } from "../../utils";
 const CtaSection = () => {
   // const [compraVenta, setCompraVenta] = useState([0, 0]);
   const [cardSegment, setCardSegment] = useState("comprar");
+  // eslint-disable-next-line
   const [oferta, setOferta] = useState(0);
+  // eslint-disable-next-line
   const [venta, setVenta] = useState(0);
+  // eslint-disable-next-line
   const [vigencia, setVigencia] = useState(0);
+  // eslint-disable-next-line
   const [email, setEmail] = useState("");
+  // eslint-disable-next-line
   const [done, setDone] = useState(false);
   const [height] = useState("auto");
   const formRef = useRef();
@@ -31,6 +36,7 @@ const CtaSection = () => {
     //     console.log("No se pudo recuperar la tasa", err);
     //   });
   }, []);
+  // eslint-disable-next-line
   const enviarForm = useCallback(() => {
     if (email && oferta && venta && vigencia) {
       let data = JSON.stringify({
@@ -150,7 +156,7 @@ const CtaSection = () => {
                 </div>
                 <div className="cta-input vigencia">
                   <div className="cta-input-label">
-                    <label htmlFor="">Vigencia <span> d cvmo</span> </label>
+                    <label htmlFor="">Vigencia</label>
                     <i className="tooltip">i</i>
                   </div>
                   <input
@@ -178,7 +184,7 @@ const CtaSection = () => {
                 <button
                   onClick={(e) => {
                     e.preventDefault();
-                    enviarForm();
+                    // enviarForm();
                   }}
                   className="cta-send"
                 >

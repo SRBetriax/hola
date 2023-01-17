@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import factorya from "../../assets/img/factorya.png";
 import startup from "../../assets/img/startup-chile.png";
 import contexto from "../../assets/img/contexto.png";

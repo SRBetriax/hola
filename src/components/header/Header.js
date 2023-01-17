@@ -1,10 +1,8 @@
 import React, { useState, useRef, useCallback, useEffect } from "react";
-import menu from "../../assets/img/btn-menu.png";
 import { useIntersection } from "react-use";
 import LogoS from "../../icons/Landing/LogoS";
-import Close from "../../icons/Landing/Close";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faBars, faXmark} from "@fortawesome/free-solid-svg-icons";
+import {faBars} from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   const [menuVisible, setmenuVisible] = useState(false);

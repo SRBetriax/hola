@@ -12,7 +12,7 @@ export const fetchCurrency = createAsyncThunk("currency/fetchCurrency", async ()
     const { data } = await axios.get(currencyUrl);
 
     const price = Math.round(data.quotes.USDPEN * 100) / 100;
-
+    console.log('listo')
     saveCurrency(price);
     return price
   } catch (err) {

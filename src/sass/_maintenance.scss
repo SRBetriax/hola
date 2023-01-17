@@ -1,6 +1,8 @@
-.maintence{
+@import "../styles\ variables/variables.scss";
+
+.maintenance{
     display: flex;
-    background-color: blue;
+    background-color: $blue;
     width: 100vw;
     height: 100vh;
     align-items: center;
@@ -11,6 +13,7 @@
     top: 0px;
     z-index: -3;
 }
+
 .img-p2p{
     width: 100%;
     height: 100%;
@@ -20,6 +23,7 @@
     top: 0px;
     z-index: -2;
 }
+
 .blur{
     backdrop-filter: blur(3px);
     width: 100%;
@@ -29,6 +33,7 @@
     top: 0px;
     z-index: 0;
 }
+
 .card{
     display: flex;
     vertical-align: center;
@@ -36,17 +41,19 @@
     justify-content: center;
     border-radius: 0.8rem;
     position: absolute;
-    width: 40vw;
+    width: 35vw;
     height: 40vh;
     z-index: 1;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
 }
+
 .link-to-main{
     width: 100%;
     height: 50%;
     text-align: center;
     justify-content: center;
 }
+
 .logo-betriax{
     width: 100%;
     height: 100%;
@@ -55,11 +62,12 @@
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
+
 .div-in-null{
     display: none;
 }
 
-@media only screen and (max-width: 1115px){
+@include media-only-down (lg2){
     .logo-betriax{
         width: 100%;
         height: 100%;
@@ -70,7 +78,7 @@
     }
 }
 
-@media only screen and (max-width: 900px){
+@include media-only-down(md3){
     .card{
         display: flex;
         vertical-align: center;
@@ -78,7 +86,7 @@
         justify-content: center;
         border-radius: 0.8rem;
         position: absolute;
-        width: 50vw;
+        width: 60vw;
         height: 50vh;
         z-index: 1;
     }
@@ -89,7 +97,7 @@
     }
 
 }
-@media only screen and (max-width: 475px){
+@include media-only-down (xs){
     .card{
         display: flex;
         vertical-align: center;
@@ -98,7 +106,7 @@
         border-radius: 0.8rem;
         position: absolute;
         width: 80vw;
-        height: 80vh;
+        height: 50vh;
         z-index: 1;
     }
     .link-to-main{

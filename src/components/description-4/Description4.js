@@ -14,7 +14,7 @@ const Description4 = () => {
           <h3>
             <span role="img" aria-label="emoji felicidad">
               😊
-            </span>{" "}
+            </span>
             Betriax
           </h3>
           <p>

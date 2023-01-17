@@ -13,11 +13,14 @@ $black: #000;
 
 //MAPS 
 $breakpoints: (
+    xs: 475px,
     sm: 600px,
     sm2: 750px,
     md: 800px,
     md2: 850px,
-    lg: 1000px
+    md3: 900px,
+    lg: 1000px,
+    lg2: 1115px
 );
 
 //MEDIA SCREEN 
@@ -34,6 +37,16 @@ $breakpoints: (
 @mixin media-up($breakpoint) {
     @if map-has-key($breakpoints, $breakpoint){
         @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    } @else {
+        @warn "The key "#{$breakpoint}" do not exist. Check the map for syntaxis errors."
+    }
+};
+
+@mixin media-only-down($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint){
+        @media only screen and (max-width: map-get($breakpoints, $breakpoint)) {
             @content;
         }
     } @else {

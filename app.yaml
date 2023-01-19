@@ -26,6 +26,10 @@
 #   memory_gb: 0.5
 #   disk_size_gb: 10
 runtime: nodejs16
+env_variables:
+  # This setting is used in settings.py to configure your ALLOWED_HOSTS
+  # APPENGINE_URL: PROJECT_ID.uc.r.appspot.com
+  APPENGINE_URL: https://ancient-house-257118.rj.r.appspot.com
 handlers:
   # Serve all static files with url ending with a file extension
   - url: /(.*\..+)$

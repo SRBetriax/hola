@@ -2,7 +2,7 @@ import React from "react";
 // eslint-disable-next-line
 import { Link } from "react-router-dom";
 
-export default function FinalCta() {
+/*export default function FinalCta() {
   return (
     <article className="container-fluid final-cta">
       <div className="row">
@@ -486,11 +486,12 @@ export default function FinalCta() {
           <a href="https://app.betriax.com/register">
             <button className="cta-button">Regístrate gratis</button>
           </a>
-          {/* <Link to="/maintence">
+          //comentar este link
+          <Link to="/maintence">
             <button className="cta-button">Regístrate gratis</button>
-          </Link> */}
+          </Link> 
         </div>
       </div>
     </article>
   );
-}
+}*/

@@ -15,6 +15,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Landing />} />
+          <Route path="/sign/:data" element={<Landing />} />
           <Route path="/maintenance/" element={<Maintenance />} />
         </Routes>
       </BrowserRouter>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useCallback, useRef } from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import enviado from "../../assets/img/check.png";
 import LogoXL from "../../icons/Landing/LogoXL";
 import { getCurrency } from "../../utils";
@@ -92,9 +93,9 @@ const CtaSection = () => {
           <a href="https://app.betriax.com/register">
             <button className="cta-button">Regístrate ahora, es gratis</button>
           </a>
-          <a href="https://app.betriax.com/">
+          <Link to="/sign/login">
             <span className="cta-enter">O inicia sesión aquí</span>
-          </a>
+          </Link>
         </div>
         <div className="col-md-6 col-sm-12 cta-card-column">
           <div className="cta-card">

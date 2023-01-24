@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Landing from "./pages/Landing";
 import AOS from "aos";
 import Maintenance from "./components/maintenance/Maintenance";
+import Sign  from "./pages/Sign";
 
 function App() {
   useEffect(() => {
@@ -15,7 +16,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Landing />} />
-          <Route path="/sign/:data" element={<Landing />} />
+          <Route path="/sign/:data" element={<Sign />} />
           <Route path="/maintenance/" element={<Maintenance />} />
         </Routes>
       </BrowserRouter>

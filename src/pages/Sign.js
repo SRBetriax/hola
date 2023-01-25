@@ -1,4 +1,4 @@
-import SignContainer from "../Containers/SignContainer";
+import SignContainer from "../containers/SignContainer";
 
 const Sign = () => {
 

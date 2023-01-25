@@ -1,5 +1,5 @@
 import BlueLogo from "../../icons/Sign/BlueLogo";
-import form from "../../assets/img/signForm.png";
+import wave from "../../assets/img/signForm.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -47,7 +47,7 @@ const PasswordRecovery = () => {
           Politica de privacidad - Terminos y condiciones
         </p>
       </div>
-      <img src={form} alt="form" className="img" />
+      <img src={wave} alt="wave" className="img-wave" />
     </div>
   );
 };

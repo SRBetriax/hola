@@ -7,24 +7,89 @@ footer.footer {
   min-height: 10vh;
   .row {
     height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    // .col-12, .col-13, .col-14{
+    //   display: flex;
+    // flex-direction: column;
+    // justify-content: space-evenly;
+    // }
+
     .col-12 {
-      display: flex;
-      height: 100%;
-      align-items: center;
-      justify-content: space-evenly;
+      width: 10%;
+      // align-items: center;
+      border: 1px solid blue;
+
+      .legend{
+        color: $grey1;
+        font-size: 1em;
+        font-weight: 200;
+        width: 22em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        border: 1px solid yellow;
+      }
+
+      .copyright {
+        color: $grey1;
+        font-size: 1em;
+        font-weight: 200;
+        border: 1px solid pink;
+      }
+
       @include media-down(md) {
         flex-flow: column;
         justify-content: space-between;
-        h3 {
+
+        .legend, .copyright {
           margin-top: 5vh;
           text-align: center;
         }
       }
-      h3 {
-        color: $grey1;
-        font-size: 1em;
-        font-weight: 200;
-      }
+
+
+    }
+
+    .col-13{
+    height: 100%;
+    // align-items: center;
+    border: 1px solid red
+
+    }
+
+
+    .second-row{
+      font-size: 0.7em;
+      color: $white;
+      font-weight: 600;
+    }
+
+    .col-14{
+      flex-direction: row;
+    }
+
+    .fb-icon,  .t-icon, .li-icon, .yt-icon{
+      color: $black;
+      font-size: 2.1em;
+      background-color: $white;
+      border-radius: 100%;
+      border: none;
+    }
+
+    .i-icon{
+      color: $black;
+      font-size: 2.4em;
+      width: 1.5em;
+      height: 1em;
+      background-color: $white;
+      border-radius: 100%;
+      border: none;
+    }
+
+    .facebook-circle{
+      background-color: $black;
     }
   }
 }

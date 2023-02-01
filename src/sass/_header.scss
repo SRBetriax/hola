@@ -95,7 +95,6 @@ header.navigation {
             margin-right: 5px;
             background: $blue;
             color: $white;
-            padding: 15px 20px;
             transition: background-color 0.3s ease-out;
             border-radius: 8px;
             border: 2px solid $blue;
@@ -116,7 +115,6 @@ header.navigation {
             padding: 10px 15px;
             margin-bottom: 2px;
             color: $blue;
-            padding: 15px 20px;
             transition: background-color 0.3s ease-out, color 0.3s ease-out;
             &:hover {
               color: $white;

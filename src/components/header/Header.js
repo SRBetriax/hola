@@ -3,6 +3,7 @@ import { useIntersection } from "react-use";
 import LogoS from "../../icons/Landing/LogoS";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faBars} from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [menuVisible, setmenuVisible] = useState(false);
@@ -61,19 +62,25 @@ const Header = () => {
             }
           >
             <li className="header-link-box ">
-              <a href="#producto">Producto</a>
+              <a href="#porque-betriax">¿Qué es Betriax?</a>
             </li>
             <li className="header-link-box ">
-              <a href="#porque-betriax">¿Por qué Betriax?</a>
+              <a href="#producto">Beneficios</a>
+            </li>
+            <li className="header-link-box ">
+              <a href="#nosotros">Nosotros</a>
             </li>
             <li className="header-link-box ">
               <a href="#preguntas-frecuentes">Preguntas frecuentes</a>
             </li>
+            <li className="header-link-box ">
+              <a href="#blog">Blog</a>
+            </li>
             <li className="header-link-box cta personas">
-              <a href="https://app.betriax.com/register">Personas</a>
+              <Link to="/sign/login">Iniciar sesión</Link>
             </li>
             <li className="header-link-box cta">
-              <a href="https://app.betriax.com/register">Empresas</a>
+              <Link to="/sign/register">Registrate</Link>
             </li>
           </ul>
         </nav>

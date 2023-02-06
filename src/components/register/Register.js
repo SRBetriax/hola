@@ -1,14 +1,12 @@
-import logo from '../../assets/img/whiteLogo.png'
-
+import React from "react";
+import Aside from "../aside/Aside";
 
 const Register = () => {
-    return (
-        <div>
-        <aside>
-        <img src={logo}/>
-        </aside>
+  return (
+    <div>
+      <Aside />
     </div>
-    );
-}
- 
+  );
+};
+
 export default Register;

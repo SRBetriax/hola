@@ -1,0 +1,49 @@
+@import "../styles\ variables/variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.aside {
+    position: absolute;
+    background-color: $blue;
+    width: 37em;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+
+    h1 {      
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 55px;
+        color: $white;
+        position: absolute;
+        width: 259px;
+        height: 192px;
+        left: 80px;
+        top: 191px;
+        line-height: 64px;
+    }
+
+    h3 {
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 28px;
+        text-align: justify;
+        color: $white;
+        position: absolute;
+        width: 288px;
+        height: 157px;
+        left: 80px;
+        top: 421px;
+        line-height: 40px;
+    }
+}
+
+.logo {
+    position: absolute;
+    width: 219px;
+    height: 52px;
+    left: 80px;
+    top: 35px;
+}
+

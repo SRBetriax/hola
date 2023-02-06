@@ -1,20 +1,20 @@
 import { useState } from "react";
 import logo from "../../assets/img/whiteLogo.png";
-import EmployeeForm from "../ProgressForm/EmployeeForm";
-import CompanyForm from "../ProgressForm/CompanyForm";
-import BankAccountForm from "../ProgressForm/BankAccountForm";
+import EmployeeForm from "../progress-form/EmployeeForm";
+import CompanyForm from "../progress-form/CompanyForm";
+import BankAccountForm from "../progress-form/BankAccountForm";
 
 import { Stepper } from "@mui/material";
 import { Step } from "@mui/material";
 import { StepLabel } from "@mui/material";
 
+
+
 const Register = () => {
 
     const [activeStep, setActiveStep] = useState(0);
 
-    const steps = [
-        0, 1, 2
-      ];
+    const steps = [0, 1, 2];
 
       
 

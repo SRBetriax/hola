@@ -6,13 +6,17 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const CompanyForm = ({ handleClick }) => {
+
   const {
     register,
-    trigger,
     handleSubmit,
-    control,
     formState: { errors },
   } = useForm();
+
+  const onSubmit = (data) =>{
+    handleClick("next")
+    console.log("SUBMIT: ", data);
+  }
 
   const countries = [
     { code: "AD", label: "Andorra", phone: "376" },
@@ -40,7 +44,7 @@ const CompanyForm = ({ handleClick }) => {
   return (
     <div>
       <h2>Registro de la empresa</h2>
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
       <label>Nombre de la empresa</label>
         <span>*</span>
         <input
@@ -201,8 +205,8 @@ const CompanyForm = ({ handleClick }) => {
         accept="image/*,.pdf"
         />
 
-        <button onClick={() => handleClick()}>Atrás <span><ArrowBackIcon /></span></button>
-        <button onClick={() => handleClick("next")}>Continuar <span><ArrowForwardIcon /></span></button>
+        <button onClick={() => handleClick()}><span><ArrowBackIcon /></span> Atrás</button>
+        <button type="submit">Continuar <span><ArrowForwardIcon /></span></button>
       </form>
     </div>
   );

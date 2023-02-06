@@ -1,11 +1,21 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import ImgLogo from "../../icons/Sign/register/imgLogo";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import Tooltip from "@mui/material/Tooltip";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import Box from "@mui/material/Box";
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import Button from "@mui/material/Button";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import CloseIcon from "@mui/icons-material/Close";
+import InfoIcon from "@mui/icons-material/Info";
 
 const countries = [
   { code: "AD", label: "Andorra", phone: "376" },
@@ -31,13 +41,27 @@ const countries = [
 ];
 
 const EmployeeForm = ({ handleClick }) => {
+
   const {
     register,
-    trigger,
     handleSubmit,
-    control,
     formState: { errors },
   } = useForm();
+
+  const onSubmit = (data) =>{
+    handleClick("next")
+    console.log("SUBMIT: ", data);
+  }
+
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <div className="container">
@@ -54,7 +78,7 @@ const EmployeeForm = ({ handleClick }) => {
       </span>
       <button>Subir foto</button>
       <p>Verifique que la foto sea clara y con una buena iluminación.</p>
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <label>Nombre completo</label>
         <span>*</span>
         <input
@@ -67,6 +91,7 @@ const EmployeeForm = ({ handleClick }) => {
           })}
         />
         {errors.name && <span>Campo requerido</span>}
+
         <input
           name="lastName"
           className=""
@@ -132,7 +157,7 @@ const EmployeeForm = ({ handleClick }) => {
           className=""
           placeholder="123 456 789"
           type="text"
-          {...register("celphone", {
+          {...register("cellphone", {
             required: true,
           })}
         />
@@ -167,11 +192,68 @@ const EmployeeForm = ({ handleClick }) => {
 
         <h4>Documento de identificación</h4>
         <p>Suba su documento de identificación en imagen o PDF.</p>
-        <input 
-        type="file"
-        accept="image/*,.pdf"
-        />
-        <button onClick={() => handleClick("next")}>Continuar <span><ArrowForwardIcon /></span></button>
+        <input type="file" accept="image/*,.pdf" />
+        <div>
+          <Button type="button" variant="outlined" onClick={handleClickOpen}>
+            <span>
+              <CloseIcon />
+            </span>{" "}
+            Cancelar
+          </Button>
+          <Dialog
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="alert-dialog-title"
+            aria-describedby="alert-dialog-description"
+          >
+            <DialogTitle 
+            style={{fontWeight: "700", 
+            fontFamily: "Poppins",
+            textAlign:"center",
+            marginLeft:"20%"}} id="alert-dialog-title">
+              {"Cancelar registro"}
+              <Button onClick={handleClose}>
+                <span style={{
+                  marginLeft:"4em",
+                  color: "#aaaaaa"
+                }}>
+                  <CloseIcon />
+                </span>
+              </Button>
+            </DialogTitle>
+            <DialogContent>
+              <DialogContentText id="alert-dialog-description" 
+              style={{fontFamily: "Poppins",
+              fontSize: "18px",
+              width:"25em",
+              textAlign:"center"
+              }}>
+                Al darle click a este botón se cancelará el registro actual
+                ¿Seguro que desea continuar?
+              </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+              <Link to="/">
+                <Button onClick={handleClose} 
+                style={{fontWeight: "700", 
+                fontFamily: "Poppins", 
+                backgroundColor: "#1243e3",
+                color: "#fff",
+                width:"25em",
+                marginRight:"4em",
+                marginBottom:"1em"}}>
+                  Aceptar
+                  </Button>
+              </Link>
+            </DialogActions>
+          </Dialog>
+        </div>
+        <button type="submit" >
+          Continuar
+          <span>
+            <ArrowForwardIcon />
+          </span>
+        </button>
       </form>
     </div>
   );

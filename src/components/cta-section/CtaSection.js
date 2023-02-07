@@ -90,9 +90,9 @@ const CtaSection = () => {
             segura del mercado de cambio de divisas. <br />
             Tú pones el precio a tus dólares.
           </h3>
-          <a href="https://app.betriax.com/register">
+          <Link to="/sign/register">
             <button className="cta-button">Regístrate ahora, es gratis</button>
-          </a>
+          </Link>
           <Link to="/sign/login">
             <span className="cta-enter">O inicia sesión aquí</span>
           </Link>

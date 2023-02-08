@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Landing from "./pages/Landing";
 import AOS from "aos";
 import Maintenance from "./components/maintenance/Maintenance";
-import Sign  from "./pages/Sign";
+import Sign from "./pages/Sign";
 
 function App() {
   useEffect(() => {

@@ -10,8 +10,8 @@ const Login = () => {
     handleSubmit,
   } = useForm();
 
-  const regex =
-    /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+  /*const regex =
+    /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;*/
 
   const onSubmit = (data) => {
     console.log(data);
@@ -27,9 +27,9 @@ const Login = () => {
         <input
           type="text"
           placeholder="Ingrese su correo electrónico"
-          {...register("email", {
+          /*{...register("email", {
             pattern: regex,
-          })}
+          })}*/
           className="input-email"
         />
         {/* Manejo de errores */}
@@ -50,7 +50,7 @@ const Login = () => {
         <input type="checkbox" className="checkbox" />
         <span className="checkbox-span">Recuérdame</span>
         <Link to="/dashboard">
-          <input type="submit" className="btn" value="Iniciar sesión" />
+          <input type="submit" className="btn-login" value="Iniciar sesión" />
         </Link>
       </form>
 
@@ -58,11 +58,11 @@ const Login = () => {
         <p className="p-forgotten-password">¿Olvidaste tu contraseña?</p>
       </Link>
 
-      <p className="p-register">
+      <p className="p-login">
         ¿No tienes una cuenta para operar? Crea una cuenta
       </p>
       <Link to="/sign/register">
-        <span className="p-span">aquí</span>
+        <span className="p-register-span">aquí</span>
       </Link>
     </div>
   );

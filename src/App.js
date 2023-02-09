@@ -4,6 +4,7 @@ import Landing from "./pages/Landing";
 import AOS from "aos";
 import Maintenance from "./components/maintenance/Maintenance";
 import Sign  from "./pages/Sign";
+import Ayuda from "./components/ayuda/ayuda";
 
 function App() {
   useEffect(() => {
@@ -18,6 +19,8 @@ function App() {
           <Route path="/" element={<Landing />} />
           <Route path="/sign/:data" element={<Sign />} />
           <Route path="/maintenance/" element={<Maintenance />} />
+
+          <Route path="/ayuda" element={<Ayuda/>} />
         </Routes>
       </BrowserRouter>
     </>

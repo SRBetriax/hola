@@ -4,9 +4,22 @@
     background-color: $blue;
     height: 100%;
     width: 30%;
+
+    .logo-container{
+        display: flex;
+        justify-content: center;
+        padding-top: 4em;
+    }
+
+    .stepper-container{
+        display: flex;
+        justify-content: center;
+        margin-top: 10em;
+    }
+    
 }
 
-.child2{
+.step{
 position: relative;
 left: 30%;
 width: 50%;

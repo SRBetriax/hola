@@ -1,0 +1,158 @@
+@import "../styles\ variables/variables.scss";
+
+.register-title {
+    position: absolute;
+    width: 543px;
+    height: 87px;
+    left: 930px;
+    top: 80px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 42px;
+    color: $black;
+}
+
+.register-subtitle {
+    position: absolute;
+    width: 262px;
+    height: 35px;
+    left: 930px;
+    top: 130px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: justify;
+    color: $grey4;
+}
+
+.container-person {
+    position: absolute;
+    width: 700px;
+    height: 125px;
+    left: 930px;
+    top: 317px;
+    background: $grey3;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+}
+
+.container-corporation {
+    position: absolute;
+    width: 700px;
+    height: 125px;
+    left: 930px;
+    top: 506px;
+    background: $white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+}
+
+.rectangle-person {
+    border: 2px solid $grey4;
+    border-radius: 5px;
+    padding: 8px;
+    width: 85px;
+    margin-left: 35px;
+    margin-top: 20px;
+}
+
+.rectangle-corporation {
+    border: 2px solid $blue;
+    border-radius: 5px;
+    padding: 8px;
+    width: 85px;
+    margin-left: 35px;
+    margin-top: 20px;
+}
+
+.h2-person {
+    position: fixed;
+    width: 112px;
+    height: 29px;
+    left: 1070px;
+    top: 345px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    color: $grey4;
+}
+
+.h2-corporation {
+    position: fixed;
+    width: 112px;
+    height: 29px;
+    left: 1070px;
+    top: 532px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    color: $black;
+}
+
+.p-person {
+    position: fixed;
+    width: 276px;
+    height: 38px;
+    left: 1070px;
+    top: 375px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: justify;
+    color: $grey4;
+}
+
+.p-corporation {
+    position: fixed;
+    width: 293px;
+    height: 38px;
+    left: 1070px;
+    top: 565px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: justify;
+    color: $grey4;
+}
+
+.p-register {
+    position: absolute;
+    width: 377px;
+    height: 36px;
+    left: 1110px;
+    top: 825px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: justify;
+    color: $grey4;
+}
+
+.p-span {
+    position: absolute;
+    left: 1382px;
+    top: 825px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: justify;
+    color: $blue;
+    text-decoration-line: underline;
+}
+

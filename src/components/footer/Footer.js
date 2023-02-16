@@ -17,15 +17,17 @@ const Footer = () => {
   return (
     <footer className="container-fluid footer">
       <div className="row">
-
-        <div className="col-12">
+        <div className="logo">
           <LogoFooter />
-          <h3 className="legend">
-            Betriax es un nuevo mercado de cambio de divisas donde los clientes
-            determinan, entre ellos, la tasa de cambio en cada transacción.
-          </h3>
-          <h3 className="copyright">All © Copyright by Betriax. All Rights Reserved.</h3>
         </div>
+
+        <h3 className="legend">
+          Betriax es un nuevo mercado de cambio de divisas donde los clientes
+          determinan, entre ellos, la tasa de cambio en cada transacción.
+        </h3>
+        <h3 className="copyright">
+          © Copyright by Betriax. All Rights Reserved.
+        </h3>
 
         <div className="col-13">
           <h3 className="second-row">Ayuda</h3>
@@ -35,23 +37,21 @@ const Footer = () => {
         </div>
 
         <div className="col-14">
-
           <div className="facebook-circle">
-            <Facebook/>
+            <Facebook />
           </div>
           <div className="instagram-circle">
-            <Instagram/>
+            <Instagram />
           </div>
           <div className="twitter-circle">
-            <Twitter/>
+            <Twitter />
           </div>
           <div className="linkedin-circle">
-            <Linkedin  />
+            <Linkedin />
           </div>
           <div className="yt-circle">
-            <Youtube/>
+            <Youtube />
           </div>
-
         </div>
       </div>
     </footer>

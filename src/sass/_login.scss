@@ -1,149 +1,148 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import "../styles\ variables/variables.scss";
 
+
+.login-container {
+    display: flex;
+    position: relative;
+    top: 5em;
+    left: 60em;
+    width: 60em;
+    height: 40em;
+    align-items: center;
+    flex-direction: column;
+}
+
 .login-title {
-    position: absolute;
-    font-family: 'Roboto', sans-serif;
+    position: relative;
+    right: 9.3em;
+    color: $black;
+    font-family: $roboto;
     font-style: normal;
     font-weight: 900;
-    font-size: 36px;
-    width: 312px;
-    height: 42px;
-    left: 930px;
-    top: 80px;
-    line-height: 42px;
-    color: $black;
+    font-size: 2.2em;
+    padding: 1em;
 }
 
 .label-email {
-    position: absolute;
-    width: 170px;
-    height: 26px;
-    left: 930px;
-    top: 297px;
-    font-family: 'Roboto';
+    position: relative;
+    top: 4em;
+    left: 0.1em;
+    font-family: $roboto;
     font-style: normal;
     font-weight: 700;
-    font-size: 18px;
-    line-height: 30px;
+    font-size: 1em;
+    line-height: 1.8em;
     text-align: justify;
     color: $darkGrey; 
 }
 
 .input-email {
-    position: absolute;
-    width: 700px;
-    left: 930px;
-    top: 345px;
-    outline: none;
-    border: none;
-    border-bottom: 2px solid $grey5;
-}
-
-.input-password {
-    position: absolute;
-    width: 700px;
-    left: 930px;
-    top: 445px;
+    position: relative;
+    width: 36em;
+    top: 6.5em;
+    right: 8.8em;
     outline: none;
     border: none;
     border-bottom: 2px solid $grey5;
 }
 
 .label-password {
-    position: absolute;
-    width: 170px;
-    height: 26px;
-    left: 930px;
-    top: 395px;
-    font-family: 'Roboto';
+    position: relative;
+    top: 10em;
+    right: 44.8em;
+    font-family: $roboto;
     font-style: normal;
     font-weight: 700;
-    font-size: 18px;
-    line-height: 30px;
+    font-size: 1em;
+    line-height: 1.8em;
     text-align: justify;
     color: $darkGrey;
 }
 
-.btn-login {
-    position: absolute;
-    width: 700px;
-    height: 45px;
-    left: 930px;
-    top: 573px;
-    background: $blue;
+.input-password {
+    position: relative;
+    width: 36em;
+    top: 9.7em;
+    outline: none;
     border: none;
-    border-radius: 8px;
+    border-bottom: 2px solid $grey5;
+}
+
+.btn-login {
+    position: relative;
+    top: 17em;
+    width: 35.9em;
+    height: 2.8em;
+    border: none;
+    border-radius: 5px;
+    background: $blue;
     color: $white;
 }
 
 .p-forgotten-password {
-    position: absolute;
-    width: 216px;
-    height: 36px;
-    left: 1180px;
-    top: 769px;
-    font-family: 'Roboto';
+    position: relative;
+    top: 19em;
+    right: 5.3em;
+    font-family: $roboto;
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
-    line-height: 30px;
+    font-size: 1.1em;
+    line-height: 1.8em;
     text-align: justify;
     text-decoration-line: underline;
     color: $blue;
 }
 
 .p-login {
-    position: absolute;
-    width: 461px;
-    height: 30px;
-    left: 1060px;
-    top: 825px;
-    font-family: 'Roboto';
+    position: relative;
+    top: 20em;
+    right: 12em;
+    font-family: $roboto;
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
-    line-height: 30px;
-    text-align: justify;
+    font-size: 1.1em;
+    line-height: 1.8em;
     color: $darkGrey;
 }
 
 .p-register-span {
-    position: absolute;
-    left: 1480px;
-    top: 825px;
-    font-family: 'Roboto';
+    position: relative;
+    top: 17.3em;
+    left: 11.4em;
+    font-family: $roboto;
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
-    line-height: 30px;
-    text-align: justify;
+    font-size: 1.1em;
+    line-height: 1.8em;
     color: $blue;
     text-decoration-line: underline;
 }
 
 .checkbox {
     box-sizing: border-box;
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    left: 930px;
-    top: 498px;
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    top: 14em;
+    right: 36em;
     border: 1px solid $grey5;
     border-radius: 2px;
 }
 
-.checkbox-span {
-    position: absolute;
-    width: 517px;
-    height: 36px;
-    left: 965px;
-    top: 495px;
-    font-family: 'Roboto';
+.checkbox-span {          
+    position: relative;
+    top: 13.7em;
+    right: 35.5em;
+    font-family: $roboto;
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
-    line-height: 30px;
+    font-size: 1.1;
+    line-height: 1.8em;
     text-align: justify;
     color: $darkGrey;
+}
+
+.container-f {
+    padding: 5em;
 }

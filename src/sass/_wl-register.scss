@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import "../styles\ variables/variables.scss";
 
 .register-title {
@@ -6,7 +7,7 @@
     height: 87px;
     left: 930px;
     top: 80px;
-    font-family: 'Roboto';
+    font-family: $roboto;
     font-style: normal;
     font-weight: 900;
     font-size: 36px;
@@ -20,7 +21,7 @@
     height: 35px;
     left: 930px;
     top: 130px;
-    font-family: 'Roboto';
+    font-family: $roboto;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -75,7 +76,7 @@
     height: 29px;
     left: 1070px;
     top: 345px;
-    font-family: 'Roboto';
+    font-family: $roboto;
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
@@ -89,7 +90,7 @@
     height: 29px;
     left: 1070px;
     top: 532px;
-    font-family: 'Roboto';
+    font-family: $roboto;
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
@@ -103,7 +104,7 @@
     height: 38px;
     left: 1070px;
     top: 375px;
-    font-family: 'Roboto';
+    font-family: $roboto;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -118,7 +119,7 @@
     height: 38px;
     left: 1070px;
     top: 565px;
-    font-family: 'Roboto';
+    font-family: $roboto;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -133,7 +134,7 @@
     height: 36px;
     left: 1110px;
     top: 825px;
-    font-family: 'Roboto';
+    font-family: $roboto;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -146,7 +147,7 @@
     position: absolute;
     left: 1382px;
     top: 825px;
-    font-family: 'Roboto';
+    font-family: $roboto;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;

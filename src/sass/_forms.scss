@@ -3,19 +3,19 @@
 .form-container {
 
     .step1-container {
-        padding-top: 4.5em;
+        padding-top: 8.7em;
+
 
         .step1-title {
             text-align: center;
             // border: 1px solid red;
-            margin-left: 4em;
             font-weight: 900;
             font-size: 2.25em;
             width: 100%;
         }
 
         .step1-logo-img {
-            margin-top: 10px;
+            margin-top: 0.625em;
 
         }
 
@@ -24,12 +24,12 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            margin-left: 5em;
             width: 100%;
+            padding-top: 3.125em;
 
             .tooltip-container {
                 display: flex;
-                padding-top: 10px;
+                padding-top: 0.625em;
 
                 .step1-profile-title {
                     font-size: 1.125;
@@ -46,32 +46,533 @@
                 }
             }
 
-                .step1-profile-btn {
-                    background-color: $grey5;
-                    color: $white;
-                    border: none;
-                    width: 100%;
-                    height: 47px;
-                    border-radius: 8px;
-                    margin-left: 3em;
-                }
-            
+            .step1-profile-btn {
+                background-color: $grey5;
+                color: $white;
+                border: none;
+                width: 100%;
+                height: 2.938em;
+                border-radius: 8px;
+                margin-left: 3em;
+            }
+
         }
 
         .step1-label-names {
             font-size: 1.125em;
             font-weight: 700;
-            padding-top: 4em;
-            padding-left: 150px;
+            padding-top: 7em;
+            padding-left: 8.5em;
+        }
 
-            .names-container{
+        .names-container {
+            padding-left: 9.375em;
+            padding-bottom: 1.25em;
+            // border: 1px solid pink;
+            display: flex;
 
-                input{
-                    border-bottom: solid;
+            input {
+                @include input1()
+            }
+        }
+
+        .id-label,
+        .email-label,
+        .country-label,
+        .receipt-label {
+            font-size: 1.125em;
+            font-weight: 700;
+            padding-left: 8.5em;
+            padding-top: 20px;
+
+        }
+
+        .id-container {
+            padding-bottom: 0.625em;
+
+            input {
+                outline: none;
+                border: none;
+                border-bottom: 2px solid $grey6;
+                margin-left: 9.375em;
+                background-color: transparent;
+                width: 56%;
+            }
+        }
+    }
+
+    .cellphone-label {
+        font-size: 1.125em;
+        font-weight: 700;
+        padding-left: 8.5em;
+        padding-top: 0.625em;
+    }
+
+    .cellphone-container {
+        display: flex;
+        padding-left: 9.375em;
+        padding-bottom: 1.875em;
+
+        .cell-input {
+            outline: none;
+            border: none;
+            border-bottom: 2px solid $grey6;
+            margin-left: 0.938em;
+            background-color: transparent;
+
+        }
+    }
+
+
+    .email-container {
+        padding-bottom: 1.875em;
+
+        input {
+            outline: none;
+            border: none;
+            border-bottom: 2px solid $grey6;
+            margin-left: 9.375em;
+            background-color: transparent;
+            width: 58%;
+        }
+    }
+
+
+    .country-container {
+        padding-bottom: 1.875em;
+
+        select {
+            width: 58%;
+            outline: none;
+            border: none;
+            border-bottom: 2px solid $grey6;
+            margin-left: 9.375em;
+            background-color: transparent;
+        }
+    }
+
+    .id-img-container {
+        display: flex;
+        margin-top: 1.25em;
+
+        input {
+            margin-left: 0.625em;
+        }
+
+        .id-tooltip-container {
+            display: flex;
+
+            h4 {
+                font-size: 1.125em;
+                font-weight: 700;
+                padding-left: 8.5em;
+                align-content: center;
+            }
+        }
+    }
+
+
+    .receipt-input {
+        margin-left: 0.625em;
+        margin-top: 3.125em;
+    }
+
+    .btns-container {
+        display: flex;
+        padding: 3.125em 0 3.125em 1.875em;
+
+
+        .cancel-btn {
+            padding-left: 7.5em;
+            padding-right: 18.75em;
+
+        }
+
+        .next-btn {
+            background-color: $blue;
+            color: $white;
+            width: 11.25em;
+            // height: 45px;
+            border: none;
+            border-radius: 8px;
+
+            span {
+                padding-left: 0.625em;
+            }
+        }
+    }
+
+    .error-span {
+        @include error();
+    }
+
+    .error-span-name {
+        color: $red;
+        display: flex;
+        flex-direction: column;
+        // border: 1px solid blue;
+        // width: 500px;
+        margin-right: 0.625em;
+    }
+
+    .error-span-last {
+        color: $red;
+        display: flex;
+        flex-direction: column;
+        // border: 1px solid blue;
+        // width: 150px;
+    }
+
+    .error-span-cell {
+        color: $red;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+
+
+    .step2-container {
+
+        .step2-title {
+            font-weight: 900;
+            font-size: 2.25em;
+            padding-top: 3em;
+            text-align: center;
+        }
+
+        .company-label {
+            font-weight: 700;
+            font-size: 1.125em;
+            padding-top: 4.938em;
+            padding-left: 8.4em;
+        }
+
+        .company-container {
+
+            input {
+                @include input2();
+            }
+        }
+
+        .ruc-label,
+        .rep-label,
+        .city-label,
+        .address-label,
+        .cellphone-label,
+        .web-label,
+        .poder-label,
+        .receipt-label {
+            font-weight: 700;
+            font-size: 1.125em;
+            padding-top: 1.5em;
+            padding-left: 8.4em;
+        }
+
+        .ruc-container {
+
+            input {
+                @include input2()
+            }
+        }
+
+
+        .rep-container {
+
+            input {
+                @include input2()
+            }
+        }
+
+
+        .city-container {
+
+            select {
+                @include input2();
+            }
+        }
+
+        .address-container {
+            input {
+                @include input2();
+            }
+        }
+
+
+        .cellphone-container {
+            padding-left: 9.375em;
+
+            .cellphone-input {
+                outline: none;
+                border: none;
+                border-bottom: 2px solid $grey6;
+                margin-left: 0.625em;
+                background-color: transparent;
+                width: 31%;
+            }
+        }
+
+        .web-container {
+            input {
+                @include input2();
+            }
+        }
+
+
+        .tooltip-container {
+            display: flex;
+
+            .docs-title {
+                font-weight: 700;
+                font-size: 1.125em;
+                padding-top: 2.188em;
+                padding-left: 8.4em;
+            }
+
+            .step2-docs-tooltip {
+                margin-top: 2.313em;
+                margin-left: 0.313em;
+            }
+        }
+
+        .poder-container {
+            display: flex;
+        }
+
+
+        .p-container {
+            padding-left: 10.8em;
+            font-size: 0.875em;
+        }
+
+        .input-con {
+            align-self: center;
+            margin-left: 5em;
+        }
+
+        .receipt-container {
+            display: flex;
+        }
+
+        .input-container {
+            align-self: center;
+            margin-left: 1.25em;
+
+        }
+
+        .btn-container {
+
+            padding: 3.125em 0 3.125em 10em;
+
+            .back-btn {
+                border: none;
+                color: $grey6;
+                font-weight: 600;
+
+                span {
+                    margin-right: 0.625em;
                 }
+            }
+
+            .next-btn {
+                background-color: $blue;
+                color: $white;
+                border: none;
+                border-radius: 8px;
+                height: 2.188em;
+                width: 11.25em;
+                margin-left: 12.5em;
+                padding-left: 2em;
+
+                span {
+                    margin-left: 0.313em;
+                    padding: 0.25em;
+                }
+            }
+        }
+
+    }
+
+    .step3-container {
+
+        .step3-title {
+            font-weight: 900;
+            font-size: 2.25em;
+            padding-top: 3.5em;
+            text-align: center;
+        }
+
+        .step3-tooltip-container {
+            display: flex;
+
+            .step3-subtitle-soles {
+                font-weight: 700;
+                font-size: 1.125em;
+                align-self: center;
+                padding-left: 8.4em;
+                padding-right: 0.625em;
+                padding-top: 2.8em;
+            }
+
+            .step3-title-tooltip {
+                margin-top: 2.938em;
             }
 
         }
 
+        .bank-label,
+        .CCI-soles-label,
+        .CCI-dolar-label {
+            font-weight: 700;
+            font-size: 1.125em;
+            padding-top: 3em;
+            padding-left: 8.4em;
+        }
+
+        .bank-container {
+            select {
+                @include input3();
+            }
+        }
+
+        .account-number-label {
+            font-weight: 700;
+            font-size: 1.125em;
+            padding-top: 1.563em;
+            padding-left: 8.4em;
+        }
+
+        .account-number-container {
+
+            input {
+                @include input3();
+            }
+        }
+
+
+        .CCI-soles-container {
+
+            input {
+                @include input3();
+            }
+
+            .add-ul {
+
+                .add-li {
+                    list-style-type: none;
+
+                    .add-input {
+                        width: 30%;
+                        margin-top: 1.25em;
+                    }
+
+                    .delete-btn {
+                        border: none;
+                        margin-left: 0.625em;
+                    }
+                }
+            }
+
+            .add-btn {
+                font-weight: 700;
+                font-size: 1em;
+                color: $blue;
+                border: none;
+                margin-left: 9.375em;
+                padding-top: 0.313em;
+            }
+        }
+
+        .step3-tooltip-container {
+
+            .step3-subtitle-dolares {
+                font-weight: 700;
+                font-size: 1.125em;
+                align-self: center;
+                padding-left: 8.4em;
+                padding-right: 0.625em;
+                padding-top: 3.8em;
+            }
+
+            .step3-title-tooltip-dolares {
+                margin-top: 4.063em;
+            }
+        }
+
+        .CCI-dolar-container {
+
+            input {
+                @include input3();
+            }
+
+            .add-ul {
+
+                .add-li {
+                    list-style-type: none;
+
+                    .add-input {
+                        width: 30%;
+                        margin-top: 1.25em;
+                    }
+
+                    .delete-btn {
+                        border: none;
+                        margin-left: 0.625em;
+                    }
+                }
+            }
+
+            .add-btn {
+                font-weight: 700;
+                font-size: 1em;
+                color: $blue;
+                border: none;
+                margin-left: 9.375em;
+                padding-top: 0.313em;
+            }
+        }
+
+        .terms-politics-container {
+            display: flex;
+            margin-left: 9.375em;
+            margin-top: 6.563em;
+
+            p {
+                padding-top: 0.938em;
+                padding-left: 0.625em;
+            }
+        }
+
+        .btns-container {
+            margin-left: 9.375em;
+
+            .back-btn {
+                border: none;
+                color: $grey6;
+                font-weight: 600;
+
+                span {
+                    margin-right: 0.625em;
+                }
+            }
+
+            .finish-btn {
+                background-color: $blue;
+                color: $white;
+                border: none;
+                border-radius: 8px;
+                height: 2.3em;
+                margin-left: 15.6em;
+                width: 20%;
+
+
+            }
+        }
+
+        .error-span {
+            color: $red;
+            padding-top: 5px;
+            padding-left: 9.375em;
+        }
     }
+
 }

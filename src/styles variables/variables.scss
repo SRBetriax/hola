@@ -6,15 +6,13 @@ $grey1: #ccc;
 $darkBlue: #091540;
 $grey2: #e0e0e0;
 $darkGrey: #737373;
-$grey3:#d2d2d2;
-$grey4:#aaaaaa;
-<<<<<<< HEAD
+$grey3: #d2d2d2;
+$grey4: #aaaaaa;
 $grey5: #A3A3A3;
-=======
-$grey5: #4F4F4F;
->>>>>>> 9674cbd914217af3daf6bfe3e5fa9c8e0ea6ba78
+$grey6: #4F4F4F;
 $background2: #eef1fa;
 $black: #000;
+$red: #e71d36;
 
 //MAPS 
 $breakpoints: (
@@ -30,67 +28,116 @@ $breakpoints: (
 
 //MEDIA SCREEN 
 @mixin media-down($breakpoint) {
-    @if map-has-key($breakpoints, $breakpoint){
+    @if map-has-key($breakpoints, $breakpoint) {
         @media screen and (max-width: map-get($breakpoints, $breakpoint)) {
             @content;
         }
-    } @else {
+    }
+
+    @else {
         @warn "The key "#{$breakpoint}" do not exist. Check the map for syntaxis errors."
     }
-};
+}
+
+;
 
 @mixin media-up($breakpoint) {
-    @if map-has-key($breakpoints, $breakpoint){
+    @if map-has-key($breakpoints, $breakpoint) {
         @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
             @content;
         }
-    } @else {
+    }
+
+    @else {
         @warn "The key "#{$breakpoint}" do not exist. Check the map for syntaxis errors."
     }
-};
+}
+
+;
 
 @mixin media-only-down($breakpoint) {
-    @if map-has-key($breakpoints, $breakpoint){
+    @if map-has-key($breakpoints, $breakpoint) {
         @media only screen and (max-width: map-get($breakpoints, $breakpoint)) {
             @content;
         }
-    } @else {
+    }
+
+    @else {
         @warn "The key "#{$breakpoint}" do not exist. Check the map for syntaxis errors."
     }
-};
+}
+
+;
 
 //LINED BUTTON
-@mixin linedButton(){
+@mixin linedButton() {
     border-radius: 8px;
     border: 2px solid #1243e3;
     background: transparent;
     color: #1243e3;
     padding: 15px 20px;
     transition: background-color 0.3s ease-out, color 0.3s ease-out;
+
     &:hover {
         color: #fff;
         background-color: #1243e3;
-            }
+    }
+
     &:after {
         display: none;
-            }
+    }
 }
 
 //FILLED BUTTON
-@mixin filledButton(){
+@mixin filledButton() {
     background: #1243e3;
     color: #fff;
     padding: 15px 20px;
     transition: background-color 0.3s ease-out;
     border-radius: 8px;
     border: 2px solid #1243e3;
+
     &:after {
         display: none;
-            }
+    }
+
     &:hover {
         background: darken(#1243e3, 10);
-            }
+    }
 }
-    
 
+//@include input1()
+
+
+@mixin input1() {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid $grey6;
+    margin-right: 100px;
+    background-color: transparent;
+}
+
+@mixin input2() {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid $grey6;
+    margin-left: 9.375em;
+    background-color: transparent;
+    width: 60%;
+}
+
+@mixin input3 {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid $grey6;
+    margin-left: 9.375em;
+    background-color: transparent;
+    width: 60%;
+}
+
+@mixin error() {
+    color: $red;
+    display: flex;
+    padding-left: 9.375em;
+}
 

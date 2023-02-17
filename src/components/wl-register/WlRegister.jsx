@@ -24,7 +24,7 @@ const WlRegister = () => {
         </div>
       </div>
       {/* Falta Link al /form */}
-      <Link to="/sign/form">
+      <Link to="/sign/register/form">
         <div className="container-corporation">
           <h3 className="h2-corporation">EMPRESA</h3>
           <p className="p-corporation">

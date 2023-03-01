@@ -1,9 +1,20 @@
 
 .container-register{
     position: absolute;
-    background-color: $blue;
+    background-color: #7ca9b4;
     height: 85.3vw;
     width: 30%;
+
+    @include media-down(sm2){
+        height: 160vw;
+        width: 30%;
+    }
+
+    @include media-down(xs){
+        height: 250vw;
+        width: 45%;
+    }
+
 
 
 
@@ -11,12 +22,30 @@
         display: flex;
         justify-content: center;
         padding-top: 4em;
+
+        @include media-down(sm2){
+            img{
+                width: 80%;
+                padding-left: 12%;
+            }
+        }
+
+        @include media-down(xs){
+            img{
+                width: 70%;
+            }
+        }
     }
 
     .stepper-container{
         display: flex;
         justify-content: center;
         margin-top: 15em;
+
+        @include media-down(sm2){
+            margin-top: 9em;
+            padding-left: 0.5em;
+        }
     }
     
 }
@@ -25,5 +54,9 @@
 position: relative;
 left: 30%;
 width: 60%;
+
+@include media-down(xs){
+    width: 70%;
+}
 
 }

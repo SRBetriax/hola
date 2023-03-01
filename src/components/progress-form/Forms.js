@@ -21,6 +21,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import DeleteOutlineRoundedIcon from "@mui/icons-material/DeleteOutlineRounded";
 import Checked from "../../icons/Sign/register/checked";
 
+
 const countries = [
   { code: "AD", label: "Andorra", phone: "376" },
   {
@@ -44,10 +45,10 @@ const countries = [
   { code: "AT", label: "Austria", phone: "43" },
 ];
 
-const required = {
-  value: true,
-  message: "Este campo es requerido",
-};
+// const required = {
+//   value: true,
+//   message: "Este campo es requerido",
+// };
 
 const Forms = ({ handleClick, activeStep }) => {
   const {
@@ -70,6 +71,7 @@ const Forms = ({ handleClick, activeStep }) => {
     remove: cuentaInterbancariaDolaresRemove,
   } = useFieldArray({ control, name: "cuentaInterbancariaDolares" });
 
+
   const onSubmit = (data) => {
     console.log("SUBMIT: ", data);
   };
@@ -86,6 +88,7 @@ const Forms = ({ handleClick, activeStep }) => {
     if (isValid) handleClick("next");
   };
 
+
   const handleLast = async () =>{
     let isValid = false;
     
@@ -96,7 +99,9 @@ const Forms = ({ handleClick, activeStep }) => {
     if (isValid) setOpen(true);
   }
 
+
   const [open, setOpen] = useState(false);
+  
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -139,10 +144,9 @@ const Forms = ({ handleClick, activeStep }) => {
             <label className="step1-label-names">Nombre completo</label>
             <span>*</span>
             <div className="names-container">
-              <input true
+              <input
                 name="name"
-                className="step1-name-input"
-                placeholder="Nombres"
+                placeholder="Nombres y apellidos"
                 type="text"
                 {...register("name", {
                   required: true,
@@ -152,7 +156,7 @@ const Forms = ({ handleClick, activeStep }) => {
                 <span className="error-span-name">Campo requerido</span>
               )}
 
-              <input
+              {/* <input
                 name="lastName"
                 className=""
                 placeholder="Apellidos"
@@ -163,7 +167,7 @@ const Forms = ({ handleClick, activeStep }) => {
               />
               {errors.lastName && (
                 <span className="error-span-last">Campo requerido</span>
-              )}
+              )} */}
             </div>
 
             <label className="id-label">Identificación</label>
@@ -186,6 +190,7 @@ const Forms = ({ handleClick, activeStep }) => {
             <div className="cellphone-container">
               <Autocomplete
                 id="country-select-demo"
+                className="select-country"
                 sx={{ width: 300 }}
                 options={countries}
                 autoHighlight
@@ -227,8 +232,10 @@ const Forms = ({ handleClick, activeStep }) => {
                   required: true,
                 })}
               />
+              <i className="caract-p">Agregar característica de su país</i>
               {errors.cellphone && (
                 <div className="error-span-cell">Campo requerido</div>
+                
               )}
             </div>
 
@@ -282,19 +289,21 @@ const Forms = ({ handleClick, activeStep }) => {
               <input type="file" accept="image/*,.pdf" />
             </div>
 
-            <label className="receipt-label">Recibo de servicios</label>
-            <span>*</span>
-            <input
-              type="file"
-              accept="image/*,.pdf"
-              {...register("receipt", {
-                required: true,
-              })}
-              className="receipt-input"
-            />
-            {errors.receipt && (
-              <span className="error-span">Campo requerido</span>
-            )}
+            <div className="receipt-container">
+              <label className="receipt-label">Recibo de servicios</label>
+              <span className="span-receipt">*</span>
+              <input
+                type="file"
+                accept="image/*,.pdf"
+                {...register("receipt", {
+                  required: true,
+                })}
+                className="receipt-input"
+              />
+              {errors.receipt && (
+                <span className="error-span">Campo requerido</span>
+              )}
+            </div>
 
             <div className="btns-container">
               <div className="cancel-btn">
@@ -306,7 +315,7 @@ const Forms = ({ handleClick, activeStep }) => {
                     width: 100,
                     color: "#4F4F4F",
                     fontWeight: "700",
-                    fontSize: "12px",
+                    fontSize: "0.7em",
                     border: "none",
                   }}
                 >
@@ -327,6 +336,7 @@ const Forms = ({ handleClick, activeStep }) => {
                       fontFamily: "Poppins",
                       textAlign: "center",
                       marginLeft: "20%",
+                      display:"flex"
                     }}
                     id="alert-dialog-title"
                   >
@@ -334,7 +344,7 @@ const Forms = ({ handleClick, activeStep }) => {
                     <Button type="button" onClick={handleClose}>
                       <span
                         style={{
-                          marginLeft: "4em",
+                          marginLeft: "3em",
                           color: "#aaaaaa",
                         }}
                       >
@@ -345,10 +355,10 @@ const Forms = ({ handleClick, activeStep }) => {
                   <DialogContent>
                     <DialogContentText
                       id="alert-dialog-description"
-                      style={{
+                      sx={{
                         fontFamily: "Poppins",
-                        fontSize: "18px",
-                        width: "25em",
+                        fontSize: "1em",
+                        // width: "25em",
                         textAlign: "center",
                       }}
                     >
@@ -362,13 +372,13 @@ const Forms = ({ handleClick, activeStep }) => {
                     <Link to="/">
                       <Button
                         onClick={handleClose}
-                        style={{
+                        sx={{
                           fontWeight: "700",
                           fontFamily: "Poppins",
                           backgroundColor: "#1243e3",
                           color: "#fff",
-                          width: "25em",
-                          marginRight: "4em",
+                          // width: "25em",
+                          // marginRight: "4em",
                           marginBottom: "1em",
                         }}
                         type="button"
@@ -496,6 +506,7 @@ const Forms = ({ handleClick, activeStep }) => {
             <div className="cellphone-container">
               <Autocomplete
                 id="country-select-demo"
+                className="cell-select"
                 sx={{ width: 300 }}
                 options={countries}
                 autoHighlight
@@ -537,6 +548,7 @@ const Forms = ({ handleClick, activeStep }) => {
                   required: true,
                 })}
               />
+              <i className="caract-par">Agregar característica de su país</i>
               {errors.companyCellphone && (
                 <span className="error-span">Campo requerido</span>
               )}
@@ -836,8 +848,8 @@ const Forms = ({ handleClick, activeStep }) => {
                       sx={{
                         fontFamily: "Poppins",
                         fontWeight: "600",
-                        fontSize: "18px",
-                        width: "25em",
+                        // fontSize: "18px",
+                        // width: "25em",
                         alignItems: "center",
                         textAlign:"center",
                         display: "flex",
@@ -861,8 +873,8 @@ const Forms = ({ handleClick, activeStep }) => {
                           fontFamily: "Poppins",
                           backgroundColor: "#1243e3",
                           color: "#fff",
-                          width: "25em",
-                          marginRight: "4.5em",
+                          // width: "25em",
+                          // marginRight: "4.5em",
                           marginBottom: "1em",
                         }}
                         type="button"

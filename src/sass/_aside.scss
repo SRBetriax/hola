@@ -4,13 +4,13 @@
 .aside {
     position: absolute;
     background-color: $blue;
-    width: 40em;
+    width: 37em;
     height: 100%;
     left: 0px;
     top: 0px;
 
     h1 {      
-        font-family: 'Roboto', sans-serif;
+        font-family: $roboto;
         font-style: normal;
         font-weight: 900;
         font-size: 55px;
@@ -24,7 +24,7 @@
     }
 
     h3 {
-        font-family: 'Roboto', sans-serif;
+        font-family: $roboto;
         font-style: normal;
         font-weight: 400;
         font-size: 28px;

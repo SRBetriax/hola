@@ -14,6 +14,9 @@ $background2: #eef1fa;
 $black: #000;
 $red: #e71d36;
 
+//FONTS
+$roboto: 'Roboto', sans-serif;
+
 //MAPS 
 $breakpoints: (
     xs: 475px,
@@ -106,7 +109,7 @@ $breakpoints: (
     }
 }
 
-//@include input1()
+
 
 
 @mixin input1() {

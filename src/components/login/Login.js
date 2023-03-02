@@ -1,4 +1,3 @@
-import React from "react";
 import Aside from "../aside/Aside";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
@@ -55,18 +54,16 @@ const Login = () => {
           </Link>
         </form>
 
-        <div className="container-f">
-          <Link to="/sign/passwordRecovery">
-            <p className="p-forgotten-password">¿Olvidaste tu contraseña?</p>
-          </Link>
+        <Link to="/sign/passwordRecovery">
+          <p className="p-forgotten-password">¿Olvidaste tu contraseña?</p>
+        </Link>
 
-          <p className="p-login">
-            ¿No tienes una cuenta para operar? Crea una cuenta
-          </p>
-          <Link to="/sign/register">
-            <span className="p-register-span">aquí</span>
-          </Link>
-        </div>
+        <p className="p-r-login">
+          ¿No tienes una cuenta para operar? Crea una cuenta
+        </p>
+        <Link to="/sign/register">
+          <p className="p-r">aquí</p>
+        </Link>
       </div>
     </>
   );

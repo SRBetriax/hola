@@ -1,139 +1,132 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import "../styles\ variables/variables.scss";
 
+
+.register-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 60em;
+    margin-left: 32%;
+}
+
 .register-title {
-    position: absolute;
-    width: 543px;
-    height: 87px;
-    left: 930px;
-    top: 80px;
+    padding-top: 4em;
+    width: 10em;
     font-family: $roboto;
-    font-style: normal;
     font-weight: 900;
-    font-size: 36px;
-    line-height: 42px;
+    font-size: 2.2em;
     color: $black;
 }
 
 .register-subtitle {
-    position: absolute;
-    width: 262px;
-    height: 35px;
-    left: 930px;
-    top: 130px;
+    padding-top: 1.5em;
+    width: 14em;
     font-family: $roboto;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
-    line-height: 30px;
     text-align: justify;
     color: $grey4;
 }
 
 .container-person {
-    position: absolute;
-    width: 700px;
-    height: 125px;
-    left: 930px;
-    top: 317px;
+    position: relative;
+    width: 43em;
+    height: 8em;
+    left: 10em;
+    top: 5em;
     background: $grey3;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-    border-radius: 12px;
+    border-radius: 1em;
 }
 
 .container-corporation {
-    position: absolute;
-    width: 700px;
-    height: 125px;
-    left: 930px;
-    top: 506px;
+    position: relative;
+    width: 43em;
+    height: 8em;
+    left: 10em;
+    top: 10em;
     background: $white;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-    border-radius: 12px;
+    border-radius: 1em;
 }
 
 .rectangle-person {
+    position: relative;
+    bottom: 3.2em;
+    left: 1.5em;
     border: 2px solid $grey4;
-    border-radius: 5px;
-    padding: 8px;
-    width: 85px;
-    margin-left: 35px;
-    margin-top: 20px;
+    border-radius: 0.5em;
+    padding: 5px;
+    width: 5em;
 }
 
 .rectangle-corporation {
+    position: relative;
+    left: 1.5em;
+    bottom: 3.2em;
     border: 2px solid $blue;
-    border-radius: 5px;
-    padding: 8px;
-    width: 85px;
-    margin-left: 35px;
-    margin-top: 20px;
+    border-radius: 0.5em;
+    padding: 5px;
+    width: 5em;
 }
 
-.h2-person {
-    position: fixed;
-    width: 112px;
-    height: 29px;
-    left: 1070px;
-    top: 345px;
+.person {
+    position: relative;
+    left: 5em;
+    top: 1.3em;
+    width: 8em;
     font-family: $roboto;
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
-    line-height: 28px;
+    font-size: 1.5em;
     color: $grey4;
 }
 
-.h2-corporation {
-    position: fixed;
-    width: 112px;
-    height: 29px;
-    left: 1070px;
-    top: 532px;
+.corporation {
+    position: relative;
+    left: 5em;
+    top: 1.3em;
     font-family: $roboto;
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
-    line-height: 28px;
+    font-size: 1.5em;
+    text-decoration: none;
     color: $black;
 }
 
 .p-person {
-    position: fixed;
-    width: 276px;
-    height: 38px;
-    left: 1070px;
-    top: 375px;
+    position: relative;
+    left: 7.5em;
+    top: 2em;
+    width: 25em;
     font-family: $roboto;
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 1em;
     text-align: justify;
     color: $grey4;
 }
 
 .p-corporation {
-    position: fixed;
-    width: 293px;
-    height: 38px;
-    left: 1070px;
-    top: 565px;
+    position: relative;
+    left: 7.5em;
+    top: 2em;
     font-family: $roboto;
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 1em;
     text-align: justify;
     color: $grey4;
+ 
 }
 
 .p-register {
-    position: absolute;
-    width: 377px;
-    height: 36px;
-    left: 1110px;
-    top: 825px;
+    position: relative;
+    left: 4.6em;
+    top: 16em;
+    width: 15em;
     font-family: $roboto;
     font-style: normal;
     font-weight: 400;
@@ -143,10 +136,10 @@
     color: $grey4;
 }
 
-.p-span {
-    position: absolute;
-    left: 1382px;
-    top: 825px;
+.p-s {
+    position: relative;
+    left: 19.7em;
+    top: 13.4em;
     font-family: $roboto;
     font-style: normal;
     font-weight: 400;

@@ -4,18 +4,17 @@
 
 .login-container {
     display: flex;
-    position: relative;
-    top: 5em;
-    left: 60em;
-    width: 60em;
-    height: 40em;
     align-items: center;
     flex-direction: column;
+    margin-top: 7em;
+    margin-left: 59em;
+    width: 50em;
+    height: 40em;
 }
 
 .login-title {
     position: relative;
-    right: 9.3em;
+    right: 7.1em;
     color: $black;
     font-family: $roboto;
     font-style: normal;
@@ -49,8 +48,8 @@
 
 .label-password {
     position: relative;
-    top: 10em;
-    right: 44.8em;
+    top: 7.5em;
+    right: 0;
     font-family: $roboto;
     font-style: normal;
     font-weight: 700;
@@ -64,6 +63,7 @@
     position: relative;
     width: 36em;
     top: 9.7em;
+    right: 5.8em;
     outline: none;
     border: none;
     border-bottom: 2px solid $grey5;
@@ -83,7 +83,7 @@
 .p-forgotten-password {
     position: relative;
     top: 19em;
-    right: 5.3em;
+    right: 6.5em;
     font-family: $roboto;
     font-style: normal;
     font-weight: 400;
@@ -94,10 +94,10 @@
     color: $blue;
 }
 
-.p-login {
+.p-r-login {
     position: relative;
     top: 20em;
-    right: 12em;
+    right: 8em;
     font-family: $roboto;
     font-style: normal;
     font-weight: 400;
@@ -106,10 +106,10 @@
     color: $darkGrey;
 }
 
-.p-register-span {
+.p-r {
     position: relative;
     top: 17.3em;
-    left: 11.4em;
+    left: 4.8em;
     font-family: $roboto;
     font-style: normal;
     font-weight: 400;
@@ -117,6 +117,7 @@
     line-height: 1.8em;
     color: $blue;
     text-decoration-line: underline;
+    
 }
 
 .checkbox {
@@ -125,15 +126,15 @@
     width: 1.5em;
     height: 1.5em;
     top: 14em;
-    right: 36em;
+    right: 41em;
     border: 1px solid $grey5;
     border-radius: 2px;
 }
 
 .checkbox-span {          
     position: relative;
-    top: 13.7em;
-    right: 35.5em;
+    top: 13.6em;
+    right: 40.5em;
     font-family: $roboto;
     font-style: normal;
     font-weight: 400;
@@ -141,8 +142,4 @@
     line-height: 1.8em;
     text-align: justify;
     color: $darkGrey;
-}
-
-.container-f {
-    padding: 5em;
 }

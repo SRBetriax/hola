@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm, useFieldArray } from "react-hook-form";
 import { Link } from "react-router-dom";
 
@@ -21,6 +21,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import DeleteOutlineRoundedIcon from "@mui/icons-material/DeleteOutlineRounded";
 import Checked from "../../icons/Sign/register/checked";
 
+import Avatar from "react-avatar-edit";
 
 const countries = [
   { code: "AD", label: "Andorra", phone: "376" },
@@ -71,7 +72,6 @@ const Forms = ({ handleClick, activeStep }) => {
     remove: cuentaInterbancariaDolaresRemove,
   } = useFieldArray({ control, name: "cuentaInterbancariaDolares" });
 
-
   const onSubmit = (data) => {
     console.log("SUBMIT: ", data);
   };
@@ -79,36 +79,94 @@ const Forms = ({ handleClick, activeStep }) => {
   const handleNext = async () => {
     let isValid = false;
 
-    if (activeStep === 0){
-      isValid = await trigger(["name", "lastName", "id", "cellphone","email","country",]);
-    }else if(activeStep === 1){
-      isValid = await trigger(["companyName","ruc", "legalRep","city", "address", "companyCellphone","webSite"])
+    if (activeStep === 0) {
+      isValid = await trigger([
+        "name",
+        "lastName",
+        "id",
+        "cellphone",
+        "email",
+        "country",
+      ]);
+    } else if (activeStep === 1) {
+      isValid = await trigger([
+        "companyName",
+        "ruc",
+        "legalRep",
+        "city",
+        "address",
+        "companyCellphone",
+        "webSite",
+      ]);
     }
 
     if (isValid) handleClick("next");
   };
 
-
-  const handleLast = async () =>{
+  const handleLast = async () => {
     let isValid = false;
-    
-    if(activeStep === 2){
-      isValid = await trigger(["solesBank", "solesBankNumber", "CCICode", "dolaresBank", "CCICodeDolares"])
+
+    if (activeStep === 2) {
+      isValid = await trigger([
+        "solesBank",
+        "solesBankNumber",
+        "CCICode",
+        "dolaresBank",
+        "CCICodeDolares",
+      ]);
     }
 
     if (isValid) setOpen(true);
-  }
-
+  };
 
   const [open, setOpen] = useState(false);
-  
+  const [openModal, setOpenModal] = useState(false);
+  const [imgCrop, setImgCrop] = useState(false);
+  const [storeImage, setStoreImage] = useState([]);
+  console.log(imgCrop, "crop");
 
   const handleClickOpen = () => {
     setOpen(true);
   };
 
+  const handleOpen = () => {
+    setOpenModal(true);
+  };
+
   const handleClose = () => {
     setOpen(false);
+    setImgCrop(null);
+  };
+
+  const onCrop = (view) => {
+    setImgCrop(view);
+  };
+
+  const onClose = () => {
+    setImgCrop(null);
+  };
+
+  useEffect(() => {
+    const getImage = getImg();
+    if (getImage?.length) {
+      setStoreImage([getImage]);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (imgCrop.length) {
+      localStorage.setItem("img", JSON.stringify(storeImage));
+    }
+  }, [storeImage]);
+
+  const saveImg = () => {
+    setStoreImage([imgCrop]);
+    setOpenModal(false);
+  };
+
+  const getImg = () => {
+    const data = localStorage.getItem("img");
+    return JSON.parse(data);
   };
 
   return (
@@ -119,7 +177,11 @@ const Forms = ({ handleClick, activeStep }) => {
             <h2 className="step1-title">Registro de empleado/apoderado</h2>
             <div className="profile-pic-container">
               <div className="step1-logo-img">
-                <ImgLogo />
+                {storeImage.length ? (
+                  <img src={storeImage} alt="profile img" />
+                ) : (
+                  <ImgLogo />
+                )}
               </div>
               <div className="">
                 <div className="tooltip-container">
@@ -135,9 +197,31 @@ const Forms = ({ handleClick, activeStep }) => {
                     </Tooltip>
                   </span>
                 </div>
-                <button type="button" className="step1-profile-btn">
+                <button
+                  type="button"
+                  onClick={handleOpen}
+                  className="step1-profile-btn"
+                >
                   Subir foto
                 </button>
+                <Dialog
+                  open={openModal}
+                  onClose={handleClose}
+                  aria-labelledby="alert-dialog-title"
+                  aria-describedby="alert-dialog-description"
+                >
+                  <DialogContent>
+                    <Avatar
+                      width={390}
+                      height={295}
+                      onCrop={onCrop}
+                      onClose={onClose}
+                    />
+                  </DialogContent>
+                  <DialogActions>
+                    <Button onClick={saveImg}>Aceptar</Button>
+                  </DialogActions>
+                </Dialog>
               </div>
             </div>
 
@@ -235,7 +319,6 @@ const Forms = ({ handleClick, activeStep }) => {
               <i className="caract-p">Agregar característica de su país</i>
               {errors.cellphone && (
                 <div className="error-span-cell">Campo requerido</div>
-                
               )}
             </div>
 
@@ -336,7 +419,7 @@ const Forms = ({ handleClick, activeStep }) => {
                       fontFamily: "Poppins",
                       textAlign: "center",
                       marginLeft: "20%",
-                      display:"flex"
+                      display: "flex",
                     }}
                     id="alert-dialog-title"
                   >
@@ -364,8 +447,8 @@ const Forms = ({ handleClick, activeStep }) => {
                     >
                       Al darle click a este botón se cancelará el registro
                       actual.
-                      <br/>
-                       ¿Seguro que desea continuar?
+                      <br />
+                      ¿Seguro que desea continuar?
                     </DialogContentText>
                   </DialogContent>
                   <DialogActions>
@@ -828,62 +911,61 @@ const Forms = ({ handleClick, activeStep }) => {
                 Atrás
               </button>
 
-            
-                <Button
-                  type="submit"
-                  onClick={() => handleLast()}
-                  className="finish-btn"
-                >
-                  Finalizar
-                </Button>
-                <Dialog
-                  open={open}
-                  onClose={handleClose}
-                  aria-labelledby="alert-dialog-title"
-                  aria-describedby="alert-dialog-description"
-                >
-                  <DialogContent>
-                    <DialogContentText
-                      id="alert-dialog-description"
+              <Button
+                type="submit"
+                onClick={() => handleLast()}
+                className="finish-btn"
+              >
+                Finalizar
+              </Button>
+              <Dialog
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+              >
+                <DialogContent>
+                  <DialogContentText
+                    id="alert-dialog-description"
+                    sx={{
+                      fontFamily: "Poppins",
+                      fontWeight: "600",
+                      // fontSize: "18px",
+                      // width: "25em",
+                      alignItems: "center",
+                      textAlign: "center",
+                      display: "flex",
+                      flexDirection: "column",
+                    }}
+                  >
+                    <Checked />
+                    <br />
+                    ¡Se completo el proceso de registro exitosamente!
+                    <br />
+                    Dentro de 24 horas recibirá un correo electrónico
+                    confirmando la validación de su información.
+                  </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                  <Link to="/">
+                    <Button
+                      onClick={handleClose}
                       sx={{
+                        fontWeight: "700",
                         fontFamily: "Poppins",
-                        fontWeight: "600",
-                        // fontSize: "18px",
+                        backgroundColor: "#1243e3",
+                        color: "#fff",
                         // width: "25em",
-                        alignItems: "center",
-                        textAlign:"center",
-                        display: "flex",
-                        flexDirection:"column"
+                        // marginRight: "4.5em",
+                        marginBottom: "1em",
                       }}
+                      type="button"
                     >
-                      <Checked />
-                      <br />
-                      ¡Se completo el proceso de registro exitosamente! 
-                      <br />
-                      Dentro de 24 horas recibirá un correo electrónico confirmando la
-                      validación de su información.
-                    </DialogContentText>
-                  </DialogContent>
-                  <DialogActions>
-                    <Link to="/">
-                      <Button
-                        onClick={handleClose}
-                        sx={{
-                          fontWeight: "700",
-                          fontFamily: "Poppins",
-                          backgroundColor: "#1243e3",
-                          color: "#fff",
-                          // width: "25em",
-                          // marginRight: "4.5em",
-                          marginBottom: "1em",
-                        }}
-                        type="button"
-                      >
-                        Ok
-                      </Button>
-                    </Link>
-                  </DialogActions>
-                </Dialog>
+                      Ok
+                    </Button>
+                  </Link>
+                </DialogActions>
+              </Dialog>
             </div>
           </section>
         )}

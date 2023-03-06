@@ -18,3 +18,5 @@ export const getCurrency = () => {
 export const getDate = () => {
   return localStorage.getItem('date');
 }
+
+

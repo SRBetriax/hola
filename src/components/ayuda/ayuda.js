@@ -1,124 +1,99 @@
-import { useForm, useFieldArray } from "react-hook-form";
+import { useState } from "react";
+import ImgLogo from "../../icons/Sign/register/imgLogo";
+import Button from "@mui/material/Button";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import Avatar from 'react-avatar-edit'
+
+
 
 const Ayuda = () => {
+  const [open, setOpen] = useState(false);
+  const [imgCrop, setImgCrop] = useState(false)
+  const [storeImage, setStoreImage] = useState([])
 
-    const {
-        register,
-        control,
-        handleSubmit,
-        formState: { errors },
-      } = useForm();
-      const {
-        fields: cuentaInterbancariaSolesFields,
-        append: cuentaInterbancariaSolesAppend,
-        remove: cuentaInterbancariaSolesRemove,
-      } = useFieldArray({ control, name: "cuentaInterbancariaSoles" });
-    
-      const {
-        fields: cuentaInterbancariaDolaresFields,
-        append: cuentaInterbancariaDolaresAppend,
-        remove: cuentaInterbancariaDolaresRemove,
-      } = useFieldArray({ control, name: "cuentaInterbancariaDolares" });
-    
-      const onSubmit = (data) => {
-        console.log("SUBMIT: ", data);
-      };
-    
-    return (
-        <div style={{backgroundColor: "#E5E5E5"}}>
-            <form onSubmit={handleSubmit(onSubmit)}>
-            <label>Código de cuenta interbancaria CCI</label>
-            <span>*</span>
-            <input
-              name="email"
-              className=""
-              placeholder="Ingrese código CCI"
-              type="number"
-              {...register("CCICode", {
-                required: true,
-              })}
-            />
-            <ul>
-              {cuentaInterbancariaSolesFields.map((item, index) => (
-                <li key={item.id}>
-                  <input
-                    {...register(`cuentaInterbancariaSoles.${index}.CCICodeSoles`)}
-                  />
-                  <button
-                    type="button"
-                    onClick={() => cuentaInterbancariaSolesRemove(index)}
-                  >
-                    Delete
-                  </button>
-                </li>
-              ))}
-            </ul>
-            <button
-              type="button"
-              onClick={() => cuentaInterbancariaSolesAppend()}
-            >
-              + Agregar otra cuenta
-            </button>
-            {errors.email && <span>Campo requerido</span>}
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
 
-            <h4>Cuenta bancaria Dolares</h4>
+  const handleClose = () => {
+    setOpen(false);
+    setImgCrop(null)
+  };
 
-            <label>Banco</label>
-            <span>*</span>
-            <select
-              {...register("bank", {
-                required: true,
-              })}
-            >
-              <option value="Falabella">Banco Falabella</option>
-              <option value="GNB">Banco GNB</option>
-              <option value="Credito">Banco de Crédito del Perú</option>
-            </select>
-            {errors.email && <span>Campo requerido</span>}
+  const onCrop = (view) => {
+    setImgCrop(view)
+  }
 
-            <label>Código de cuenta interbancaria CCI</label>
-            <span>*</span>
-            <input
-              name="email"
-              className=""
-              placeholder="Ingrese código CCI"
-              type="number"
-              {...register("CCICodeDolares", {
-                required: true,
-              })}
-            />
-            <ul>
-              {cuentaInterbancariaDolaresFields.map((item, index) => (
-                <li key={item.id}>
-                  <input
-                    {...register(
-                      `cuentaInterbancariaDolares.${index}.CCICodeDolares`
-                    )}
-                  />
-                  <button
-                    type="button"
-                    onClick={() => cuentaInterbancariaDolaresRemove(index)}
-                  >
-                    Delete
-                  </button>
-                </li>
-              ))}
-            </ul>
-            <button
-              type="button"
-              onClick={() => cuentaInterbancariaDolaresAppend()}
-            >
-              + Agregar otra cuenta
-            </button>
-            <button
-              type="submit"
-            >
-              chau
-            </button>
-            {errors.email && <span>Campo requerido</span>}
-            </form>
+  const onClose = () => {
+    setImgCrop(null)
+  }
+
+  const saveImg = () => {
+    setStoreImage([...storeImage, {imgCrop}])
+    setOpen(false);
+  }
+
+
+    const profileImgShow = storeImage.map(item => item.imgCrop)
+    localStorage.setItem('img' , JSON.stringify(profileImgShow));
+
+
+  const getImg = () =>{
+    const data = localStorage.getItem('img');
+    return JSON.parse(data);
+  }
+
+  return (
+    <div style={{ backgroundColor: "#E5E5E5" }}>
+      <div className="profile-pic-container">
+        <div className="step1-logo-img">
+          {
+            profileImgShow.length ? <img src={profileImgShow}/> : <ImgLogo />
+          }
+        
         </div>
-    );
-}
- 
-export default Ayuda
+        <div className="">
+          <div className="tooltip-container">
+            <p className="step1-profile-title">
+              Foto de perfil empleado/apoderado
+            </p>
+          </div>
+          <button
+            type="button"
+            className="step1-profile-btn"
+            onClick={handleClickOpen}
+          >
+            Subir foto
+          </button>
+          <Dialog
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="alert-dialog-title"
+            aria-describedby="alert-dialog-description"
+          >
+            <DialogContent children="image">
+            <Avatar
+          width={390}
+          height={295}
+          onCrop={onCrop}
+          onClose={onClose}
+          
+        />
+            </DialogContent>
+            <DialogActions>
+              <Button
+                onClick={saveImg}
+              >
+                Aceptar
+              </Button>
+            </DialogActions>
+          </Dialog>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Ayuda;

@@ -21,13 +21,8 @@ const WlRegister = () => {
           <IconPersona />
         </div>
       </div>
-<<<<<<< HEAD:src/components/wl-register/WlRegister.jsx
-      {/* Falta Link al /form */}
-      <Link to="/sign/register/form">
-=======
 
-      <Link to="/sign/form">
->>>>>>> bb6e4a873cfc70fe1155bfbcc35282ef3de22a9b:src/components/wl-register/WlRegister.js
+      <Link to="/sign/register/form">
         <div className="container-corporation">
           <h3 className="corporation">EMPRESA</h3>
           <p className="p-corporation">

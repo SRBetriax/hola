@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Landing from "./pages/Landing";
 import AOS from "aos";
 import Maintenance from "./components/maintenance/Maintenance";
-import Sign  from "./pages/Sign";
+import Sign from "./pages/Sign";
 import Ayuda from "./components/ayuda/ayuda";
 import Register from "./components/register/Register";
 
@@ -14,7 +14,7 @@ function App() {
   }, []);
 
   return (
-    <div style={{backgroundColor: "#F4F4F4"}}>
+    <div>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Landing />} />
@@ -23,7 +23,7 @@ function App() {
 
           <Route path="/maintenance/" element={<Maintenance />} />
 
-          <Route path="/ayuda" element={<Ayuda/>} />
+          <Route path="/ayuda" element={<Ayuda />} />
         </Routes>
       </BrowserRouter>
     </div>

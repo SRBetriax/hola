@@ -21,9 +21,8 @@ const WlRegister = () => {
           <IconPersona />
         </div>
       </div>
-
-      <Link to="/sign/register/form">
-        <div className="container-corporation">
+      <div className="container-corporation">
+        <Link to="/sign/register/form" style={{ textDecoration: "none" }}>
           <h3 className="corporation">EMPRESA</h3>
           <p className="p-corporation">
             Si compras o vendes dólares a nombre de una empresa (RUC)
@@ -31,8 +30,8 @@ const WlRegister = () => {
           <div className="rectangle-corporation">
             <IconEmpresa />
           </div>
-        </div>
-      </Link>
+        </Link>
+      </div>
       <div className="section-login">
         <p className="p-register">¿Ya tienes una cuenta en Betriax?</p>
         <Link to="/sign/login">

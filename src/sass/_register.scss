@@ -2,20 +2,17 @@
 .container-register {
     position: absolute;
     background-color: #7ca9b4;
-    height: 85.3vw;
+    height: 100vw;
     width: 30%;
 
     @include media-down(sm2){
-        height: 160vw;
+        height: 200vw;
         width: 30%;
     }
 
     @include media-down(xs){
-        height: 250vw;
-        width: 45%;
+        display: none;
     }
-
-
 
 
     .logo-container{
@@ -46,8 +43,19 @@
             margin-top: 9em;
             padding-left: 0.5em;
         }
+       
     }
+
     
+}
+.mobile-stepper{
+    display: none;
+    @include media-down(sm2){
+        display: none;
+    }
+    @include media-down(xs){
+        display: block;
+    }
 }
 
 .step{
@@ -56,7 +64,9 @@ left: 30%;
 width: 60%;
 
 @include media-down(xs){
-    width: 70%;
+    width: 100%;
+    left: 0;
+    background-color: #F4F4F4;
 }
 
 }

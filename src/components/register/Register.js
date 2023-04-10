@@ -1,11 +1,12 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../../assets/img/whiteLogo.png";
 import Forms from "../progress-form/Forms";
 
 import { Stepper } from "@mui/material";
 import { Step } from "@mui/material";
 import { StepLabel } from "@mui/material";
-import { Link } from "react-router-dom";
+import { MobileStepper } from '@mui/material';
 
 const Register = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -20,7 +21,7 @@ const Register = () => {
   };
 
   return (
-    <div style={{ backgroundColor: "#F4F4F4" }}>
+    <div>
       <div className="container-register">
         <div className="logo-container">
           <Link to="/">
@@ -63,8 +64,14 @@ const Register = () => {
               </StepLabel>
             </Step>
           </Stepper>
+
         </div>
       </div>
+          <div className="mobile-stepper">
+            <MobileStepper activeStep={activeStep} position="top" variant="text" steps={3} 
+            sx={{color:"#4F4F4F", fontWeight:"600", backgroundColor:"#F4F4F4"}}>
+            </MobileStepper>
+          </div>
 
       <div className="step">
         <Forms handleClick={handleClick} activeStep={activeStep} />

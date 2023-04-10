@@ -26,7 +26,7 @@
 
             @include media-down(xs){
                 font-size: 1em;
-                padding-left: 5em;
+                padding-left: 2em;
                 
             }
         }
@@ -39,8 +39,8 @@
                 margin-left: 0.4em;
             }
 
-            @include media-down(sm2){
-                margin-left: 9em;
+            @include media-down(xs){
+                margin-left: 7em;
             }
 
         }
@@ -83,7 +83,7 @@
 
                     @include media-down(xs){
                         font-size: 0.8em;
-                        margin-left: 9.5em;
+                        margin-left: 5em;
                         width: 50%;
                         text-align: center;
                     }
@@ -113,7 +113,7 @@
 
                 @include media-down(xs){
                     width: 30%;
-                    margin-left: 12em;
+                    margin-left: 10.5em;
                     font-size: 0.8em;
                 }
             }
@@ -132,7 +132,7 @@
             }
 
             @include media-down(xs){
-                padding-left: 6.4em;
+                padding-left: 4.5em;
                 font-size: 0.85em;
                 padding-top: 3em;
             }
@@ -154,8 +154,8 @@
 
             @include media-down(xs){
                 input{
-                    margin-left: 4.7em;
-                    width: 45%;
+                    margin-left: 3em;
+                    width: 56%;
                 }
                     ::-webkit-input-placeholder{
                         font-size: 0.9em;
@@ -179,7 +179,7 @@
 
             @include media-down(xs){
                 font-size: 0.85em;
-                padding-left: 6.4em;
+                padding-left: 4.5em;
                 
             }
         }
@@ -201,7 +201,7 @@
                 }
 
                 @include media-down(xs){
-                    margin-left: 5.4em;
+                    margin-left: 4em;
                     width: 65%;
 
                     // ::-webkit-input-placeholder{
@@ -225,7 +225,7 @@
 
         @include media-down(xs){
             font-size: 1em;
-            padding-left: 6.4em;
+            padding-left: 4.6em;
             font-size: 0.85em;
         }
     }
@@ -265,7 +265,7 @@
             background-color: transparent;
 
             @include media-down(xs){
-                margin-left: 4.7em;
+                margin-left: 3.3em;
                 width: 68%;
             }
 
@@ -282,7 +282,7 @@
 
             @include media-down(xs){
                 display: block;
-                padding-left: 6.4em;
+                padding-left: 5em;
             }
         }
     }
@@ -310,7 +310,7 @@
 
             @include media-down(xs){
                 width: 64%;
-                margin-left: 5.4em;
+                margin-left: 4em;
             }
         }
     }
@@ -334,7 +334,7 @@
 
             @include media-down(xs){
                 width: 64%;
-                margin-left: 5.4em;
+                margin-left: 3.7em;
             }
         }
     }
@@ -352,8 +352,8 @@
             margin-left: 0.625em;
 
             @include media-down(xs){
-                width: 60%;
-                margin-left: 5.4em;
+                // width: 60%;
+                margin-left: 4em;
             }
         }
 
@@ -367,7 +367,7 @@
             }
 
             @include media-down(xs){
-                padding-left: 4.7em;
+                padding-left: 3.2em;
                 width: 70%;
             }
 
@@ -417,8 +417,8 @@
             }
 
             @include media-down(xs){
-                width: 60%;
-                margin-left: 5.4em;
+                // width: 70%;
+                margin-left: 4em;
                 margin-top: 0.1em;
             }
         }
